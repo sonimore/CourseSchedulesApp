@@ -1,0 +1,6 @@
+''' Sonia Moreno, 9/20/2017
+ Reads and parses a text file containing course schedule information.
+ '''
+
+courseText  = open(“filename”, r)
+
