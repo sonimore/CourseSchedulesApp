@@ -4,15 +4,13 @@
 from collections import defaultdict
 from bs4 import BeautifulSoup
 import requests
-html = requests.get('https://apps.carleton.edu/campus/registrar/schedule/enroll/?term=18WI&subject=CS').text
-
-soup = BeautifulSoup(html, 'html5lib')
+import re
 
 
 '''Returns list of course subjects. Each will be passed to function that returns
 appropriate html link which contains specific course information for the subject
 '''
-def subject():
+def Subject():
 	html2 = requests.get('https://apps.carleton.edu/campus/registrar/schedule/enroll/').text
 	soup2 = BeautifulSoup(html2, 'html5lib')
 	print(soup2)
@@ -20,25 +18,31 @@ def subject():
 	# List of subjects
 	subject_summary = soup2.find("select", id = "subjectElement")
 
-	print subject_summary
-
 	# Each subject within summary has tag "option"
 	# Create a list with subjects, excluding 'Selected' tag (1st item)
 	subjects = subject_summary.find_all("option")[1:]
-	print subjects	
-	return subjects
 
-def main():
+	# Only get the associated text, excluding the tag itself and add them to list
+	subj_list = []
+	for item in subjects:
+		subj_list.append(item.get_text())
 
+	# Each item in subj_list is currently in the form: 'Computer Science (CS)'
+	# We only want the abbrevation in the parentheses so that we can use this in the html link
+	# We use regular expressions to achieve this.
+	subj_abbrev = []
+	for i in subj_list:
+		subj_abbrev.append(re.search(r"\s*\(.+?\)", i).group())
+		
+	return subj_abbrev
 
+# Returns dict object with course number, course name, and start/end times for each course
+# Finds course info based on the academic term and subject chosen (in this case, Winter 2018)
+def Specific_Course_Info():
 
-
-	# a_schedule = {'1a': '8:30', '2a': '9:50', '3a': '11:10', '4a': '12:30', '5a':'1:50', '6a': '3:10'}
-
-
+	html = requests.get('https://apps.carleton.edu/campus/registrar/schedule/enroll/?term=18WI&subject=CS').text
+	soup = BeautifulSoup(html, 'html5lib')
 	summary = soup.find_all("div", class_="course")
-
-	# print summary[0]
 
 
 	course_info = defaultdict(list)
@@ -55,7 +59,16 @@ def main():
 		course_info[course_num].append(start_time)
 		course_info[course_num].append(end_time)
 
-	# print course_info
+	return course_info
+
+
+def main():
+
+	Subject()
+	Specific_Course_Info()
+
+
+
 
 
 
