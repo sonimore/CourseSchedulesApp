@@ -54,12 +54,16 @@ def Subject():
 	for item in subjects:
 		subj_list.append(item.get_text())
 
+	print subj_list
+
 	# Each item in subj_list is currently in the form: 'Computer Science (CS)'
 	# We only want the abbrevation in the parentheses so that we can use this in the html link
 	# We use regular expressions to achieve this.
 	subj_abbrev = []
 	for i in subj_list:
-		subj_abbrev.append(re.search(r"\s*\(.+?\)", i).group())
+		subj_abbrev.append(re.search('\((.*?)\)', i).group(1))
+
+	# print subj_abbrev
 		
 	return subj_abbrev
 
@@ -96,9 +100,8 @@ def Specific_Course_Info():
 		course_info[course_num].append(course_name)
 		course_info[course_num].append(start_time)
 		course_info[course_num].append(end_time)
-
-		
-
+	
+	# Creates csv file with course info
 	with open('course_info.csv', 'w') as f:
 		w = csv.DictWriter(f, course_info.keys())
 		w.writeheader()
@@ -110,19 +113,23 @@ def Specific_Course_Info():
 from the academic term and subject chosen.
 '''
 def Generate_HTML():
-	term = Academic_Term()
-	subject = Subject()
+	terms = Academic_Term()
+	subjects = Subject()
+	html = []
+	for term in terms:
+		for subject in subjects:
+			html_string = 'https://apps.carleton.edu/campus/registrar/schedule/enroll/?term=' + term + '&subject=' + subject
+			html.append(html_string)
 
-	html_string = 'https://apps.carleton.edu/campus/registrar/schedule/enroll/?term=' + term + '&subject=' + subject
-
-	print html_string
-	return html_string
+	print html
+	return html
 
 def main():
-	# Generate_HTML()
-	# Academic_Term()
-	# Subject()
-	Specific_Course_Info()
+	
+	Academic_Term()
+	Subject()
+	Generate_HTML()
+	# Specific_Course_Info()
 
 main()
 
