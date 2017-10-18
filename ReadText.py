@@ -1,10 +1,11 @@
 ''' Sonia Moreno, 9/2017
- Scrapes data from Carleton Enroll containing course schedule information.
+ Scrapes data from Carleton Enroll website containing course schedule information.
  '''
 from collections import defaultdict
 from bs4 import BeautifulSoup
 import requests
 import re
+import csv
 
 
 ''' Returns list of academic terms that user can choose from. Item in list
@@ -12,6 +13,7 @@ will be passed to function that returns html link with term info provided.
 Example: 'term=18WI' in 'https://apps.carleton.edu/campus/registrar/schedule/enroll/?term=18WI&subject=CS'
 '''
 def Academic_Term():
+	# Homepage showing listings of academic terms and course subjects
 	html_enroll = requests.get('https://apps.carleton.edu/campus/registrar/schedule/enroll/').text
 	soup2 = BeautifulSoup(html_enroll, 'html5lib')
 
@@ -36,7 +38,6 @@ appropriate html link which contains specific course information for the subject
 Example: 'subject=CS' in 'https://apps.carleton.edu/campus/registrar/schedule/enroll/?term=18WI&subject=CS'
 '''
 def Subject(): 
-	# Homepage showing listings of academic terms and course subjects
 	html_enroll = requests.get('https://apps.carleton.edu/campus/registrar/schedule/enroll/').text
 	soup2 = BeautifulSoup(html_enroll, 'html5lib')
 
@@ -96,12 +97,31 @@ def Specific_Course_Info():
 		course_info[course_num].append(start_time)
 		course_info[course_num].append(end_time)
 
+		
+
+	with open('course_info.csv', 'w') as f:
+		w = csv.DictWriter(f, course_info.keys())
+		w.writeheader()
+		w.writerow(course_info)
 	return course_info
 
 
+''' Returns HTML string that Specific Course Info will use to provide only the information
+from the academic term and subject chosen.
+'''
+def Generate_HTML():
+	term = Academic_Term()
+	subject = Subject()
+
+	html_string = 'https://apps.carleton.edu/campus/registrar/schedule/enroll/?term=' + term + '&subject=' + subject
+
+	print html_string
+	return html_string
+
 def main():
-	Academic_Term()
-	Subject()
+	# Generate_HTML()
+	# Academic_Term()
+	# Subject()
 	Specific_Course_Info()
 
 main()
