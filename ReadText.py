@@ -6,7 +6,8 @@ from bs4 import BeautifulSoup
 import requests
 import re
 import csv
-
+import sys
+import json
 
 ''' Returns list of academic terms that user can choose from. Item in list
 will be passed to function that returns html link with term info provided.
@@ -99,29 +100,44 @@ def Specific_Course_Info(term):
 				course_name = course.find(class_= "coursenum").next_sibling	
 
 			# Add info to list associated with key
-			if course_num.find(subject) > -1:	
-				course_info[course_num].append(course_name)	
+			specific_info = {}
+			if course_num.find(subject) > -1:
+				specific_info['course_num'] = course_num
+				specific_info['title'] = course_name
+				# course_info[0].append({})	
 				# Start and end times for courses that have set times
 				# Account for classes without set times
 				if course.find(class_ = "start") != None:
 					start_time = course.find("span", {"class": "start"}).get_text()
 					end_time = course.find(class_ = "end").get_text()
-					course_info[course_num].append(start_time)
-
-					course_info[course_num].append(end_time)
-	print course_info
+					specific_info['start_time'] = start_time
+					specific_info['end_time'] = end_time
+				else:
+					specific_info['start_time'] = "n/a"
+					specific_info['end_time'] = "n/a"
+					# course_info[0][0].append(start_time)
+				course_info['course_info'].append(specific_info)
+					# course_info[0][0].append(end_time)
+	
 	# Creates csv file with course info
-	with open('course_info7.csv', 'w') as f: 
-		w = csv.DictWriter(f, course_info.keys())
-		w.writeheader()
-		w.writerow(course_info)
+	# with open('course_info7.csv', 'w') as f: 
+	# 	w = csv.DictWriter(f, course_info.keys())
+	# 	w.writeheader()
+	# 	w.writerow(course_info)
 
+	output_file = open('courses_table.csv', 'w')
+	writer = csv.writer(output_file)
+	for course in course_info['course_info']:
+		course_row = [course['course_num'].encode("utf-8"), course['title'].encode("utf-8"), course['start_time'].encode("utf-8"), course['end_time'].encode("utf-8")]
+		writer.writerow(course_row)
+	output_file.close()
+	print course_info
 	return course_info
-''' Adds lists together from Specific_Course_Info so that each csv file will contain info 
-for ALL subjects in one term
-''' 
-def Append_Dicts(a_dict, b_dict):
-	return
+# ''' Adds lists together from Specific_Course_Info so that each csv file will contain info 
+# for ALL subjects in one term
+# ''' 
+# def Append_Dicts(a_dict, b_dict):
+# 	return
 
 
 ''' Returns HTML string that Specific Course Info will use to provide information
@@ -129,22 +145,13 @@ for every term and subject combination.
 '''
 def Generate_HTML():
 	terms = Academic_Term()[1:3]
-	# print "terms:"
-	# print terms
 	subjects = Subject()[1:3]
-	# print subjects
 	html = []
 	for term in terms:
 		for subject in subjects:
 			print term
 			print subject
 		Specific_Course_Info(term, subject)
-			# html_string = 'https://apps.carleton.edu/campus/registrar/schedule/enroll/?term=' + term + '&subject=' + subject
-			# Specific_Course_Info(html_string)
-			# html.append(html_string)
-	# print html_string
-	# print html
-	
 
 
 def main():
