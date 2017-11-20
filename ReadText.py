@@ -21,7 +21,6 @@ def Academic_Term():
 	# Tag object containing list of academic terms 
 	term_summary = soup2.find("select", id = "termElement")
 
-
 	# Each term name such as "Winter 2018" has tag "option"
 	terms = term_summary.find_all("option")
 
@@ -30,7 +29,6 @@ def Academic_Term():
 	term_list = []
 	for option in terms:
 		term_list.append(option['value'])
-
 	return term_list
 
 
@@ -104,6 +102,31 @@ def Specific_Course_Info(term):
 			if course_num.find(subject) > -1:
 				specific_info['course_num'] = course_num
 				specific_info['title'] = course_name
+				if course.find(class_ = "faculty") != None:
+					faculty = course.find(class_ = "faculty").get_text()
+					specific_info['faculty'] = faculty
+					if course.find(class_ ="faculty").next_sibling != None:
+							summary = course.find(class_ = "faculty").next_sibling
+							summary = summary.encode("utf-8")
+							specific_info['summary'] = summary
+					else:
+							specific_info['summary'] = "n/a"
+				else:
+					specific_info['faculty'] = "n/a"
+				if course.find(class_ = "status") != None:
+					enrollment = course.find(class_ = "status").get_text()
+					# specific_info['enrollment'] = enrollment
+					registered = re.findall(r'(?<=Registered: ).*?(?=\,)', enrollment)[0]
+					size = re.findall(r'(?<=Size: ).*?(?=\,)', enrollment)[0]
+					# print registered
+					specific_info['registered'] = registered
+					specific_info['size'] = size
+					# print enrollment
+				else:
+					specific_info['registered'] = "n/a"
+					specific_info['size'] = "n/a"
+
+
 				# course_info[0].append({})	
 				# Start and end times for courses that have set times
 				# Account for classes without set times
@@ -112,6 +135,7 @@ def Specific_Course_Info(term):
 					end_time = course.find(class_ = "end").get_text()
 					specific_info['start_time'] = start_time
 					specific_info['end_time'] = end_time
+
 				else:
 					specific_info['start_time'] = "n/a"
 					specific_info['end_time'] = "n/a"
@@ -125,13 +149,15 @@ def Specific_Course_Info(term):
 	# 	w.writeheader()
 	# 	w.writerow(course_info)
 
-	output_file = open('courses_table.csv', 'w')
-	writer = csv.writer(output_file)
-	for course in course_info['course_info']:
-		course_row = [course['course_num'].encode("utf-8"), course['title'].encode("utf-8"), course['start_time'].encode("utf-8"), course['end_time'].encode("utf-8")]
-		writer.writerow(course_row)
-	output_file.close()
-	print course_info
+	# output_file = open('courses_table.csv', 'w')
+	# writer = csv.writer(output_file)
+	# for course in course_info['course_info']:
+	# 	course_row = [course['course_num'].encode("utf-8"), course['title'].encode("utf-8"), course['start_time'].encode("utf-8"), course['end_time'].encode("utf-8")]
+	# 	writer.writerow(course_row)
+	# output_file.close()
+	# print course_info
+	with open('course_data.json', 'w') as fp:
+		json.dump(course_info, fp)
 	return course_info
 # ''' Adds lists together from Specific_Course_Info so that each csv file will contain info 
 # for ALL subjects in one term
