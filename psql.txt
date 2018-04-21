@@ -1,0 +1,15 @@
+CREATE TABLE courses (
+	term TEXT,
+	requirements_met TEXT,
+	course_name TEXT,
+	registered INT,
+	description TEXT,
+	course_id TEXT,
+	end_time TEXT,
+	faculty TEXT,
+	department TEXT,
+	credits TEXT,
+	start_time TEXT,
+	size INT,
+	PRIMARY KEY(course_id)
+);

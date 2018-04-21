@@ -89,7 +89,7 @@ def Specific_Course_Info(term):
 		# Creates list of all items with course as class attribute, excluding related courses
 		course_summary = soup.find_all("div", class_="course")
 		for course in course_summary:
-			course_num = course.find(class_= "coursenum").get_text()
+			course_id = course.find(class_= "coursenum").get_text()
 			# Finds title attribute within each course
 			title = course.find(class_ = "title").get_text()
 			# Only takes the actual name of the course
@@ -100,20 +100,20 @@ def Specific_Course_Info(term):
 			# Add info to list associated with key
 			specific_info = {}
 			# Ensures that no related courses are added
-			if course_num.find(subject) > -1:
+			if course_id.find(subject) > -1:
 				specific_info['department'] = subject
 				specific_info['term'] = term
-				specific_info['course_num'] = course_num
+				specific_info['course_id'] = course_id
 				specific_info['title'] = course_name
 				if course.find(class_ = "faculty") != None:
 					faculty = course.find(class_ = "faculty").get_text()
 					specific_info['faculty'] = faculty
 					if course.find(class_ ="faculty").next_sibling != None:
-							summary = course.find(class_ = "faculty").next_sibling
-							summary = summary.encode("utf-8")
-							specific_info['summary'] = summary
+							description = course.find(class_ = "faculty").next_sibling
+							description = description.encode("utf-8")
+							specific_info['description'] = description
 					else:
-							specific_info['summary'] = "n/a"
+							specific_info['description'] = "n/a"
 				else:
 					specific_info['faculty'] = "n/a"
 				if course.find(class_ = "status") != None:
@@ -163,7 +163,7 @@ def Specific_Course_Info(term):
 	# output_file = open('courses_table.csv', 'w')
 	# writer = csv.writer(output_file)
 	# for course in course_info['course_info']:
-	# 	course_row = [course['course_num'].encode("utf-8"), course['title'].encode("utf-8"), course['start_time'].encode("utf-8"), course['end_time'].encode("utf-8")]
+	# 	course_row = [course['course_id'].encode("utf-8"), course['title'].encode("utf-8"), course['start_time'].encode("utf-8"), course['end_time'].encode("utf-8")]
 	# 	writer.writerow(course_row)
 	# output_file.close()
 	# print course_info
@@ -192,6 +192,7 @@ def Generate_HTML():
 		Specific_Course_Info(term, subject)
 
 def main():
+	
 	# Academic_Term()
 	# Subject()
 	# Generate_HTML()

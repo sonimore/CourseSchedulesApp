@@ -24,7 +24,7 @@ def _fetch_all_rows_for_query(query):
     try:
         connection = psycopg2.connect(database=config.database, user=config.user, password=config.password)
     except Exception as e:
-        print('Connection error:', e, file=sys.stderr)
+        #print('Connection error:', e, file=sys.stderr)
         return []
 
     rows = []
@@ -33,7 +33,8 @@ def _fetch_all_rows_for_query(query):
         cursor.execute(query)
         rows = cursor.fetchall() # This can be trouble if your query results are really big.
     except Exception as e:
-        print('Error querying database:', e, file=sys.stderr)
+        #print('Error querying database:', e, file=sys.stderr)
+        return []
 
     connection.close()
     return rows
@@ -47,66 +48,66 @@ def set_headers(response):
 def get_courses():
     '''
     Returns a list of all the courses in our database, in alphabetical
-    order by course_title.
+    order by course_name.
     '''
     
-    query = '''SELECT course_num, course_title, start_time, end_time
+    query = '''SELECT course_id, course_name, start_time, end_time
                FROM courses ORDER BY '''
                
     sort_argument = flask.request.args.get('sort')
     if sort_argument == 'start_time':
         query += 'start_time'
     else:
-        query += 'course_title'
+        query += 'course_id'
 
     courses_list = []
     for row in _fetch_all_rows_for_query(query):
-        url = flask.url_for('get_courses_by_course_num', course_num=row[0], _external=True)
-        course = {'course_num':row[0], 'course_title':row[1], 'start_time':row[2],
+        url = flask.url_for('get_courses_by_course_id', course_id=row[0], _external=True)
+        course = {'course_id':row[0], 'course_name':row[1], 'start_time':row[2],
                   'end_time':row[3], 'url':url}
         courses_list.append(course)
 
     return json.dumps(courses_list)
 
-@app.route('/courses/<course_title>')
-def get_courses_by_course_title(course_title:
+@app.route('/courses/<course_name>')
+def get_courses_by_course_name(course_name):
     '''
     Returns a list of all the courses with course titles equal to
-    (case-insensitive) the specified course title.  See get_course_by_course_num
+    (case-insensitive) the specified course title.  See get_course_by_course_id
     below for description of the courses resource representation.
     '''
-    query = '''SELECT course_num, course_title, start_time, end_time
+    query = '''SELECT course_id, course_name, start_time, end_time
                FROM courses
-               WHERE UPPER(course_title) LIKE UPPER('%{0}%')
-               ORDER BY course_title'''.format(course_title)
+               WHERE UPPER(course_name) LIKE UPPER('%{0}%')
+               ORDER BY course_name'''.format(course_name)
 
     courses_list = []
     for row in _fetch_all_rows_for_query(query):
-        url = flask.url_for('get_courses_by_course_num', course_num=row[0], _external=True)
-        course = {'course_num':row[0], 'course_title':row[1], 'start_time':row[2],
+        url = flask.url_for('get_courses_by_course_id', course_id=row[0], _external=True)
+        course = {'course_id':row[0], 'course_name':row[1], 'start_time':row[2],
                   'end_time':row[3], 'url':url}
         courses_list.append(course)
 
     return json.dumps(courses_list)
 
-@app.route('/author/<author_id>')
-def get_author_by_id(author_id):
+@app.route('/course/<course_id>')
+def get_courses_by_course_id(course_id):
     '''
-    Returns the course resource that has the specified course_num.
+    Returns the course resource that has the specified course_id.
     A course resource will be represented as a JSON dictionary
-    with keys 'course_title' (string value), 'start_time' (string),
-    'end_time' (string), 'course_num' (string),
+    with keys 'course_name' (string value), 'start_time' (string),
+    'end_time' (string), 'course_id' (string),
     and 'url' (string). The value associated with 'url' is a URL
     you can use to retrieve this same course in the future.
     '''
-    query = '''SELECT course_num, course_title, start_time, end_time
-               FROM courses WHERE course_num = {0}'''.format(course_num)
+    query = '''SELECT course_id, course_name, start_time, end_time
+               FROM courses WHERE course_id = {0}'''.format(course_id)
 
     rows = _fetch_all_rows_for_query(query)
     if len(rows) > 0:
         row = rows[0]
-        url = flask.url_for('get_course_by_course_num', course_num=row[0], _external=True)
-        course = {'course_num':row[0], 'course_title':row[1], 'start_time':row[2],
+        url = flask.url_for('get_course_by_course_id', course_id=row[0], _external=True)
+        course = {'course_id':row[0], 'course_name':row[1], 'start_time':row[2],
                   'end_time':row[3], 'url':url}
         return json.dumps(course)
 
@@ -123,7 +124,7 @@ def help():
 
 if __name__ == '__main__':
     if len(sys.argv) != 3:
-        print('Usage: {0} host port'.format(sys.argv[0]), file=sys.stderr)
+        #print('Usage: {0} host port'.format(sys.argv[0]), file=sys.stderr)
         exit()
 
     host = sys.argv[1]
