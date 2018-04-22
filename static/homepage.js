@@ -35,20 +35,25 @@ function coursesCallback(responseText) {
     Called when browse button is clicked from BrowseButton()
     Parses Json and creates table listing names and years of all neos
     */
-    var course_list = responseText;
-    document.getElementById("input").innerHTML = course_list;
+    console.log("one");
+
+    var course_list = JSON.parse(responseText);
+        console.log("two");
+    //document.getElementById("input").innerHTML = course_list;
     var tableBody = '';
     tableBody += '<thead><tr>';
-    tableBody += '<td>' + 'Object Name' + '</td>';
-    tableBody += '<td>' + 'Closest Approach Year' + '</td></thead><tbody>';
+    tableBody += '<td>' + 'Course' + '</td></thead><tbody>';
     for (var k = 0; k < course_list.length; k++) {
-         tableBody += '<tr>';
-         var obj = course_list[k].object;
+        tableBody += '<tr>';
+        var obj = course_list[k].course_id;
+        console.log(obj)
+        tableBody += '<td>' + obj;
+        tableBody += '</tr>';
+    }
     //     // var objString = replaceAll(obj, " ", "%20")
     //     // tableBody += '<td><a onclick="getCourses(' + obj + ")>" + '<a href='+ 'info/' + objString + '>' + obj + '</a></td>';
     //     // var date = course_list[k].split(" ")[0];
     //     tableBody += '<td><a onclick="getCourses()"</td>'
-     }
     tableBody += '</tbody>'
     console.log("Here we are");
     // var tableBody = "Hello";
