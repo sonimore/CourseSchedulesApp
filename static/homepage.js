@@ -84,12 +84,13 @@ function coursesCallback(responseText) {
 }
 
 function onBrowseByButton(){
-
+    var url = api_base_url + 'courses/department/';
     var tableBody = "";
+    browseBy = document.getElementById('browseBy');
     var resultsTableElement = document.getElementById('results_table');
     resultsTableElement.innerHTML = tableBody;
     input.innerHTML = "";
-    var url = api_base_url + 'courses/<subject>';
+    var url = url + browseBy.value;
     xmlHttpRequest = new XMLHttpRequest();
     xmlHttpRequest.open('get', url);
 
@@ -107,6 +108,20 @@ function onBrowseByButton(){
     //     }
     // }
 }
+
+// function getDepartments(){
+//     var url = api_base_url + '/courses/departments';
+//     xmlHttpRequest = new XMLHttpRequest();
+//     xmlHttpRequest.open('get', url);
+
+//     xmlHttpRequest.onreadystatechange = function() {
+//             if (xmlHttpRequest.readyState == 4 && xmlHttpRequest.status == 200) { 
+//                 getCoursesCallback(xmlHttpRequest.responseText);
+//             } 
+//         }; 
+
+//     xmlHttpRequest.send(null);    
+// }
 
 // function getCourses() {
 //     var url = api_base_url + '/courses';

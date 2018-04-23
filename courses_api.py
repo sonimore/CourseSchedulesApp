@@ -90,7 +90,7 @@ def get_courses_by_course_name(course_name):
 
     return json.dumps(courses_list)
 
-@app.route('/course/<course_id>')
+@app.route('/courses/<course_id>')
 def get_courses_by_course_id(course_id):
     '''
     Returns the course resource that has the specified course_id.
@@ -106,17 +106,31 @@ def get_courses_by_course_id(course_id):
     rows = _fetch_all_rows_for_query(query)
     if len(rows) > 0:
         row = rows[0]
-        url = flask.url_for('get_course_by_course_id', course_id=row[0], _external=True)
+        url = flask.url_for('get_courses_by_course_id', course_id=row[0], _external=True)
         course = {'course_id':row[0], 'course_name':row[1], 'start_time':row[2],
                   'end_time':row[3], 'faculty':row[4], 'department':row[5],'url':url}
         return json.dumps(course)
 
     return json.dumps({})
 
-@app.route('/course/<department>')
+@app.route('/courses/departments/')
+def get_course_departments():
+    query = ''' SELECT course_id, course_name, start_time, end_time, faculty, department
+               FROM courses ORDER BY department'''
+    rows = _fetch_all_rows_for_query(query)
+    courses_list = []
+    for row in rows:
+        url = flask.url_for('get_courses_by_course_id', course_id=row[0], _external=True)
+        course = {'department':row[5]}
+        if course not in courses_list:
+            courses_list.append(course)
+    return json.dumps(courses_list)
+
+
+@app.route('/courses/department/<department>')
 def get_courses_by_department(department):
     '''
-    Returns the course resource that has the specified course_id.
+    Returns the course resource that has the specified department.
     A course resource will be represented as a JSON dictionary
     with keys 'course_name' (string value), 'start_time' (string),
     'end_time' (string), 'course_id' (string),
@@ -124,17 +138,18 @@ def get_courses_by_department(department):
     you can use to retrieve this same course in the future.
     '''
     query = '''SELECT course_id, course_name, start_time, end_time, faculty, department
-               FROM courses WHERE course_id = {0}'''.format(course_id)
-
+               FROM courses WHERE UPPER(department) LIKE UPPER('{0}') ORDER BY department'''.format(department)
+    courses_list = []
     rows = _fetch_all_rows_for_query(query)
-    if len(rows) > 0:
-        row = rows[0]
-        url = flask.url_for('get_course_by_course_id', course_id=row[0], _external=True)
+    for row in rows:
+        url = flask.url_for('get_courses_by_course_id', course_id=row[0], _external=True)
         course = {'course_id':row[0], 'course_name':row[1], 'start_time':row[2],
                   'end_time':row[3], 'faculty':row[4], 'department':row[5],'url':url}
-        return json.dumps(course)
+        courses_list.append(course)
 
-    return json.dumps({})
+    return json.dumps(courses_list)
+
+
 
 
 @app.route('/help')
