@@ -9,6 +9,8 @@ import csv
 import sys
 import json
 
+
+
 ''' Returns list of academic terms that user can choose from. Item in list
 will be passed to function that returns html link with term info provided.
 Example: 'term=18WI' in 'https://apps.carleton.edu/campus/registrar/schedule/enroll/?term=18WI&subject=CS'
@@ -73,7 +75,13 @@ Finds course info based on the academic term and subject chosen (in this case, W
 '''
 
 def Specific_Course_Info(term):
+	
+	with open('ratings.json') as ratings:
+    		d = json.load(ratings)
+    		# print(d)
+
 	# Creates dict object with course number as key and list containing name and times for course as values
+	
 	course_info = defaultdict(list)
 
 	subjects = Subject()
@@ -106,14 +114,21 @@ def Specific_Course_Info(term):
 				specific_info['course_num'] = course_num
 				specific_info['title'] = course_name
 				if course.find(class_ = "faculty") != None:
-					faculty = course.find(class_ = "faculty").get_text()
+					faculty = course.find(class_ = "faculty").get_text().strip()					
 					specific_info['faculty'] = faculty
 					if course.find(class_ ="faculty").next_sibling != None:
 							summary = course.find(class_ = "faculty").next_sibling
-							summary = summary.encode("utf-8")
+							summary = summary.encode("utf-8").strip('<p>').strip('</').strip('class="prereq"><em>Prerequisite:</em> Instructor Permission').strip('<span>').strip('</span>')
+							summary = re.sub("[<@*&?].*[>@*&?]", "", summary)
+							print(summary)
 							specific_info['summary'] = summary
 					else:
 							specific_info['summary'] = "n/a"
+					# Add ratemyprofessor.com rating to dictionary
+					for prof in d:
+						if prof['teacherfirstname_t'] in faculty and prof['teacherlastname_t'] in faculty or (prof['teacherlastname_t'] in faculty):
+							specific_info['prof_rating'] = prof['averageratingscore_rf']
+					
 				else:
 					specific_info['faculty'] = "n/a"
 				if course.find(class_ = "status") != None:
@@ -134,7 +149,7 @@ def Specific_Course_Info(term):
 				else:
 					specific_info['credits'] = "n/a"
 				if course.find(class_ = "codes overlays"):
-					requirements = course.find(class_ = "codes overlays").get_text()
+					requirements = course.find(class_ = "codes overlays").get_text().split()
 					specific_info['requirements_met'] = requirements
 
 
@@ -151,6 +166,9 @@ def Specific_Course_Info(term):
 					specific_info['start_time'] = "n/a"
 					specific_info['end_time'] = "n/a"
 					# course_info[0][0].append(start_time)
+
+
+
 				course_info['course_info'].append(specific_info)
 					# course_info[0][0].append(end_time)
 	
@@ -167,10 +185,16 @@ def Specific_Course_Info(term):
 	# 	writer.writerow(course_row)
 	# output_file.close()
 	# print course_info
+
+
+
 	filename = 'course_data_' + term + '.json'
 	with open(filename, 'w') as fp:
 		json.dump(course_info, fp)
 	return course_info
+
+
+
 # ''' Adds lists together from Specific_Course_Info so that each csv file will contain info 
 # for ALL subjects in one term
 # ''' 
