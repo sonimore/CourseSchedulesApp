@@ -42,12 +42,34 @@ function coursesCallback(responseText) {
     //document.getElementById("input").innerHTML = course_list;
     var tableBody = '';
     tableBody += '<thead><tr>';
-    tableBody += '<td>' + 'Course' + '</td></thead><tbody>';
+    tableBody += '<td>' + 'Course </td>';
+    tableBody += '<td> Course Name </td>';
+    tableBody += '<td> Start Time </td>';
+    tableBody += '<td> End Time </td>';
+    tableBody += '<td> Faculty </td></thead><tbody>';
+
     for (var k = 0; k < course_list.length; k++) {
+        var id = course_list[k].course_id;
+        var name = course_list[k].course_name;
+        var time = course_list[k].start_time;
+        var end_time = course_list[k].end_time;
+        var faculty = course_list[k].faculty;
         tableBody += '<tr>';
-        var obj = course_list[k].course_id;
-        console.log(obj)
-        tableBody += '<td>' + obj;
+        tableBody += '<td>' + id;
+        tableBody += '<td>' + name;
+        if (time != 'n/a'){
+            tableBody += '<td>' + time;
+        }
+        else{
+            tableBody += '<td>'
+        }
+        if (end_time != 'n/a'){
+            tableBody += '<td>' + end_time;
+        }
+        else{
+            tableBody += '<td>'
+        }
+        tableBody += '<td>' + faculty;
         tableBody += '</tr>';
     }
     //     // var objString = replaceAll(obj, " ", "%20")
@@ -59,6 +81,31 @@ function coursesCallback(responseText) {
     // var tableBody = "Hello";
     var resultsTableElement = document.getElementById('results_table');
     resultsTableElement.innerHTML = tableBody;
+}
+
+function onBrowseByButton(){
+
+    var tableBody = "";
+    var resultsTableElement = document.getElementById('results_table');
+    resultsTableElement.innerHTML = tableBody;
+    input.innerHTML = "";
+    var url = api_base_url + 'courses/<subject>';
+    xmlHttpRequest = new XMLHttpRequest();
+    xmlHttpRequest.open('get', url);
+
+    xmlHttpRequest.onreadystatechange = function() {
+            if (xmlHttpRequest.readyState == 4 && xmlHttpRequest.status == 200) { 
+                coursesCallback(xmlHttpRequest.responseText);
+            } 
+        }; 
+    xmlHttpRequest.send(null);
+
+    // Close the dropdown menu if user clicks outside of it
+    // window.onclick = function(event){
+    //     if(!event.target.matches('.dropbtn')){
+    //         var dropdowns = document.getElementsByClassName("dropdown-content")
+    //     }
+    // }
 }
 
 // function getCourses() {

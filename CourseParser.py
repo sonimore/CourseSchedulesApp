@@ -196,7 +196,7 @@ def main():
 	# Academic_Term()
 	# Subject()
 	# Generate_HTML()
-	Specific_Course_Info('18WI')
+	Specific_Course_Info('18SP')
 
 main()
 

@@ -10,20 +10,26 @@
     
     <div id="header"> Carleton College Classes </div>
     <p><button id = "browsed" onclick="onBrowseButton()"> Browse All Courses </button></p>
-<!-- 
-    <p>
 
-     <input id="search" type="text" placeholder="Search Courses"/></input>
-        <select id="searchBy">
-            <option value="object">Browse by:</option>
-            <option value="object">Subject</option>
-            <option value="date">Academic Term</option>
+    <p>
+        <select id="browseBy">
+            <option value="object">Browse by Subject</option>
+            <option value= "afst"> African American Studies</option>
         </select>
-        <button onclick="SearchButton()">Search</button>
-    </p> -->
+        <button onclick="onBrowseByButton()">Go</button>
+    </p>
     <p id = "input"></p> 
     <p id = "results"></p>
     
+<!--      <div class = "dropdown"> 
+        <button onclick = "onBrowseByButton()"
+        class = "dropbtn">Dropdown</button>
+        <div id = "myDropdown" class = "dropdown-content">
+            <a> African American Studies</a>
+            <a> American Studies</a>
+        </div>
+    </div> -->
+
     <p><table id="results_table" align="center">
     </table></p> 
 
