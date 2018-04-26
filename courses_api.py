@@ -51,7 +51,7 @@ def get_courses():
     order by course_name.
     '''
     
-    query = '''SELECT course_id, course_name, start_time, end_time, faculty, department
+    query = '''SELECT course_id, course_name, start_time, end_time, faculty, department, prof_rating
                FROM courses ORDER BY '''
                
     sort_argument = flask.request.args.get('sort')
@@ -64,7 +64,7 @@ def get_courses():
     for row in _fetch_all_rows_for_query(query):
         url = flask.url_for('get_courses_by_course_id', course_id=row[0], _external=True)
         course = {'course_id':row[0], 'course_name':row[1], 'start_time':row[2],
-                  'end_time':row[3], 'faculty':row[4], 'department':row[5], 'url':url}
+                  'end_time':row[3], 'faculty':row[4], 'department':row[5], 'prof_rating':row[6], 'url':url}
         courses_list.append(course)
 
     return json.dumps(courses_list)
@@ -137,14 +137,14 @@ def get_courses_by_department(department):
     and 'url' (string). The value associated with 'url' is a URL
     you can use to retrieve this same course in the future.
     '''
-    query = '''SELECT course_id, course_name, start_time, end_time, faculty, department
+    query = '''SELECT course_id, course_name, start_time, end_time, faculty, department, prof_rating
                FROM courses WHERE UPPER(department) LIKE UPPER('{0}') ORDER BY department'''.format(department)
     courses_list = []
     rows = _fetch_all_rows_for_query(query)
     for row in rows:
         url = flask.url_for('get_courses_by_course_id', course_id=row[0], _external=True)
         course = {'course_id':row[0], 'course_name':row[1], 'start_time':row[2],
-                  'end_time':row[3], 'faculty':row[4], 'department':row[5],'url':url}
+                  'end_time':row[3], 'faculty':row[4], 'department':row[5], 'prof_rating':row[6], 'url':url}
         courses_list.append(course)
 
     return json.dumps(courses_list)

@@ -46,7 +46,8 @@ function coursesCallback(responseText) {
     tableBody += '<td> Course Name </td>';
     tableBody += '<td> Start Time </td>';
     tableBody += '<td> End Time </td>';
-    tableBody += '<td> Faculty </td></thead><tbody>';
+    tableBody += '<td> Professor </td>';
+    tableBody += '<td> Professor Rating </td></thead><tbody>';
 
     for (var k = 0; k < course_list.length; k++) {
         var id = course_list[k].course_id;
@@ -54,6 +55,7 @@ function coursesCallback(responseText) {
         var time = course_list[k].start_time;
         var end_time = course_list[k].end_time;
         var faculty = course_list[k].faculty;
+        var rating = course_list[k].prof_rating;
         tableBody += '<tr>';
         tableBody += '<td>' + id;
         tableBody += '<td>' + name;
@@ -70,7 +72,10 @@ function coursesCallback(responseText) {
             tableBody += '<td>'
         }
         tableBody += '<td>' + faculty;
+        if(rating != null){
+        tableBody += '<td>' + rating};
         tableBody += '</tr>';
+
     }
     //     // var objString = replaceAll(obj, " ", "%20")
     //     // tableBody += '<td><a onclick="getCourses(' + obj + ")>" + '<a href='+ 'info/' + objString + '>' + obj + '</a></td>';

@@ -119,8 +119,9 @@ def Specific_Course_Info(term):
 					if course.find(class_ ="faculty").next_sibling != None:
 							summary = course.find(class_ = "faculty").next_sibling
 							summary = summary.encode("utf-8").strip('<p>').strip('</').strip('class="prereq"><em>Prerequisite:</em> Instructor Permission').strip('<span>').strip('</span>')
+							# Get rid of text within tags
 							summary = re.sub("[<@*&?].*[>@*&?]", "", summary)
-							print(summary)
+							# print(summary)
 							specific_info['summary'] = summary
 					else:
 							specific_info['summary'] = "n/a"
@@ -149,8 +150,8 @@ def Specific_Course_Info(term):
 				else:
 					specific_info['credits'] = "n/a"
 				if course.find(class_ = "codes overlays"):
-					requirements = course.find(class_ = "codes overlays").get_text().split()
-					specific_info['requirements_met'] = requirements
+					requirements = course.find(class_ = "codes overlays").get_text().splitlines()
+					specific_info['requirements_met'] = tuple(requirements[1:])
 
 
 				# course_info[0].append({})	
