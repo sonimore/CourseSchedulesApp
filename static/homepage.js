@@ -118,6 +118,8 @@ function onBrowseByButton(){
 // Functions to turn overlay on/off, respectively
 function on(){
     document.getElementById("overlay").style.display = "block";
+    var overlay_text = document.getElementById("text");
+    overlay_text.innerHTML = "Hello";
 }
 function off(){
     document.getElementById("overlay").style.display = 'none';
