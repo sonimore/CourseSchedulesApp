@@ -57,8 +57,9 @@ function coursesCallback(responseText) {
         var faculty = course_list[k].faculty;
         var rating = course_list[k].prof_rating;
         tableBody += '<tr>';
+        // tableBody += '<td><a onclick="getNeos(' + obj + ")>" + '<a href='+ 'info/' + objString + '>' + obj + '</a></td>';
         tableBody += '<td>' + id;
-        tableBody += '<td>' + name;
+        tableBody += '<td><b onclick = "on()">' + name + '</b>';
         if (time != 'n/a'){
             tableBody += '<td>' + time;
         }
@@ -113,6 +114,16 @@ function onBrowseByButton(){
     //     }
     // }
 }
+
+// Functions to turn overlay on/off, respectively
+function on(){
+    document.getElementById("overlay").style.display = "block";
+}
+function off(){
+    document.getElementById("overlay").style.display = 'none';
+}
+
+
 
 // function getDepartments(){
 //     var url = api_base_url + '/courses/departments';
