@@ -1,4 +1,4 @@
-''' Sonia Moreno, 9/2017
+''' Sonia Moreno, 5/2018
  Scrapes data from Carleton Enroll website containing course schedule information.
  '''
 from __future__ import division
@@ -77,7 +77,7 @@ def format_course(text):
     for word in course_parser:
         course += word
         if course_parser.index(word) != len(course_parser)-1 and word != '':
-            course += '+'
+            course += '%20'
     return course
 
 ''' Returns dict object with course number, course name, and start/end times for each course
@@ -86,17 +86,18 @@ Finds course info based on the academic term and subject chosen (in this case, W
 
 def Specific_Course_Info(term):
 	
-	with open('ratings.json') as ratings:
+	with open('prof_ratings.json') as ratings:
     		d = json.load(ratings)
     		# print(d)
 
 	# Creates dict object with course number as key and list containing name and times for course as values
 	
-	course_info = defaultdict(list)
-
+	prof_info = {}
+	# print(prof_info)
 	subjects = Subject()
 	index = 1
 	for subject in subjects:
+
 		html_string = 'https://apps.carleton.edu/campus/registrar/schedule/enroll/?term=' + term + '&subject=' + subject
 
 		# Course listings for subject during term provided
@@ -109,99 +110,89 @@ def Specific_Course_Info(term):
 		for course in course_summary:
 			course_num = course.find(class_= "coursenum").get_text()
 			course_num = format_course(course_num)
-			# print(course_num)
-			# Finds title attribute within each course
-			title = course.find(class_ = "title").get_text()
-			# Only takes the actual name of the course
-			# which is next to the coursenum attribute but not within its own tag
-			for item in title:
-				course_name = course.find(class_= "coursenum").next_sibling
-				course_name = format_course(course_name)[:-1]
-
-			# print(course_name)
-
 			# Add info to list associated with key
-			specific_info = {}
-			# Ensures that no related courses are added
+			
+			# # Ensures that no related courses are added
 			if course_num.find(subject) > -1:
-				specific_info['department'] = subject
-				specific_info['term'] = term
-				specific_info['course_id'] = course_num
-				specific_info['title'] = course_name
-				if course.find(class_ = "status") != None:
-					enrollment = course.find(class_ = "status").get_text()
-					# specific_info['enrollment'] = enrollment
-					registered = re.findall(r'(?<=Registered: ).*?(?=\,)', enrollment)[0]
-					size = re.findall(r'(?<=Size: ).*?(?=\,)', enrollment)[0]
-					# print registered
-					specific_info['registered'] = registered
-					specific_info['size'] = size
-					# print enrollment
-				else:
-					specific_info['registered'] = "n/a"
-					specific_info['size'] = "n/a"
+			# 	if course.find(class_ = "status") != None:
+			# 		enrollment = course.find(class_ = "status").get_text()
+			# 		# specific_info['enrollment'] = enrollment
+			# 		registered = re.findall(r'(?<=Registered: ).*?(?=\,)', enrollment)[0]
+			# 		size = re.findall(r'(?<=Size: ).*?(?=\,)', enrollment)[0]
+			# 		# print registered
+			# 		# specific_info['registered'] = registered
+			# 		# specific_info['size'] = size
+			# 		# print enrollment
+			# 	else:
+			# 		specific_info['registered'] = "n/a"
+			# 		specific_info['size'] = "n/a"
 
 				if course.find(class_ = "faculty") != None:
 					faculty = course.find(class_ = "faculty").get_text().strip()					
-					specific_info['faculty'] = faculty
-					if course.find(class_ ="faculty").next_sibling != None:
-							summary = course.find(class_ = "faculty").next_sibling
-							summary = summary.encode("utf-8").strip('<p>').strip('</').strip('class="prereq"><em>Prerequisite:</em> Instructor Permission').strip('<span>').strip('</span>')
-							# Get rid of text within tags
-							summary = re.sub("[<@*&?].*[>@*&?]", "", summary)
-							# print(summary)
-							specific_info['summary'] = summary
-					else:
-							specific_info['summary'] = "n/a"
 					# Add ratemyprofessor.com rating to dictionary
 					for prof in d:
-						if prof['teacherfirstname_t'] in faculty and prof['teacherlastname_t'] in faculty or (prof['teacherlastname_t'] in faculty):
-							specific_info['prof_rating'] = prof['averageratingscore_rf']
-							# registered = int(registered)
-							# size = int(size)
-							# print(size)
-							# # print(type(registered))
-							# if size != 0:
-							# 	proportion = registered/size
-							# 	# print(proportion)
+						if prof['FIELD4'] in faculty[0:10] and prof['FIELD5'] in faculty[3:14] and len(faculty) < 20 and  faculty not in prof_info.keys():
 
-							# 	specific_info['prof_proportion'] = proportion
-							# specific_info['proportion'] = proportion
+						# if prof['FIELD4']==faculty.split()[0] and prof['FIELD5']==faculty.split()[1] and faculty not in prof_info.keys():
 
-					
-				else:
-					specific_info['faculty'] = "n/a"
-				if course.find(class_ = "credits") != None:
-					credits = course.find(class_ = "credits").get_text()
-					specific_info['credits'] = credits
-				else:
-					specific_info['credits'] = "n/a"
-				if course.find(class_ = "codes overlays"):
-					requirements = course.find(class_ = "codes overlays").get_text().splitlines()
-					specific_info['requirements_met'] = tuple(requirements[1:])
+						# if prof['FIELD4'] in faculty and prof['FIELD5'] in faculty or (prof['FIELD5'] in faculty) and not specific_info['faculty'] and ',' not in faculty and '\\xe1n' not in faculty:
+							specific_info = {}
+							specific_info['faculty'] = faculty
+							specific_info['department'] = prof['FIELD7']
+							specific_info['status'] = prof['FIELD6']
+							specific_info['number_of_ratings'] = prof['FIELD3']
+							specific_info['prof_rating'] = prof['FIELD1']
 
+							# print(type(registered))
 
-				# course_info[0].append({})	
-				# Start and end times for courses that have set times
-				# Account for classes without set times
-				if course.find(class_ = "start") != None:
-					start_time = course.find("span", {"class": "start"}).get_text()
-					end_time = course.find(class_ = "end").get_text()
-					specific_info['start_time'] = start_time
-					specific_info['end_time'] = end_time
+							if course_num.find(subject) > -1:
+								if course.find(class_ = "status") != None:
+									enrollment = course.find(class_ = "status").get_text()
+									# specific_info['enrollment'] = enrollment
+									registered = re.findall(r'(?<=Registered: ).*?(?=\,)', enrollment)[0]
+									size = re.findall(r'(?<=Size: ).*?(?=\,)', enrollment)[0]
+									# print registered
+									specific_info['registered'] = [registered]
+									specific_info['size'] = [size]
+									# print enrollment
+								else:
+									specific_info['registered'] = 0
+									specific_info['size'] = 0
+								registered = int(registered)
+								size = int(size)
+								# print(size)
 
-				else:
-					specific_info['start_time'] = "n/a"
-					specific_info['end_time'] = "n/a"
-					# course_info[0][0].append(start_time)
-
-				specific_info['index'] = index
-				index +=1
-
-				course_info['course_info'].append(specific_info)
-
-					# course_info[0][0].append(end_time)
-	
+							if size != 0:
+								proportion = registered/size
+								# print(proportion)
+								specific_info['prof_proportion'] = [proportion]
+							else:
+								specific_info['prof_proportion'] = []
+							# print(prof_info['prof_info'])
+							prof_info[faculty] = specific_info
+						elif prof['FIELD4'] in faculty[0:10] and prof['FIELD5'] in faculty[3:14] and len(faculty) < 20:
+							# registered = prof_info['prof_info'][0][faculty]['prof_proportion']['registered']
+							# size = prof_info['prof_info'][0][faculty]['prof_proportion']['size']
+							if course_num.find(subject) > -1:
+								if course.find(class_ = "status") != None:
+									enrollment = course.find(class_ = "status").get_text()
+									# specific_info['enrollment'] = enrollment
+									registered = re.findall(r'(?<=Registered: ).*?(?=\,)', enrollment)[0]
+									size = re.findall(r'(?<=Size: ).*?(?=\,)', enrollment)[0]
+									# print registered
+									prof_info[faculty]['registered'].append(registered)
+									prof_info[faculty]['size'].append(size)
+									# print enrollment
+								registered = int(registered)
+								size = int(size)
+								# print(size)
+								# print(prof_info[faculty]['registered'])
+							if size != 0:
+								proportion = registered/size
+								# print(proportion)
+								prof_info[faculty]['prof_proportion'].append(proportion)
+								# prof_info['prof_info'][0][faculty]['prof_proportion'].append(registered/size)
+								# specific_info['proportion'] = proportion
 	# Creates csv file with course info
 	# with open('course_info7.csv', 'w') as f: 
 	# 	w = csv.DictWriter(f, course_info.keys())
@@ -218,10 +209,11 @@ def Specific_Course_Info(term):
 
 
 	# print(course_info)
-	filename = 'data' + term + '.json'
+	# print(prof_info)
+	filename = 'prof_data_' + term + '.json'
 	with open(filename, 'w') as fp:
-		json.dump(course_info, fp)
-	return course_info
+		json.dump(prof_info, fp)
+	return prof_info
 
 
 
@@ -249,7 +241,24 @@ def main():
 	# Academic_Term()
 	# Subject()
 	# Generate_HTML()
-	Specific_Course_Info('18WI')
+	Specific_Course_Info('13FA')
+	# Specific_Course_Info('14FA')
+	# Specific_Course_Info('15FA')
+	# Specific_Course_Info('16FA')
+	# Specific_Course_Info('17FA')
+	# Specific_Course_Info('14WI')
+	# Specific_Course_Info('15WI')
+	# Specific_Course_Info('16WI')
+	# Specific_Course_Info('17WI')
+	# Specific_Course_Info('18WI')
+	# Specific_Course_Info('14SP')
+	# Specific_Course_Info('15SP')
+	# Specific_Course_Info('16SP')
+	# Specific_Course_Info('17SP')
+	# Specific_Course_Info('18SP')
+
+
+
 
 main()
 

@@ -33,16 +33,13 @@ function coursesCallback(responseText) {
     /*
     @param responseText: The JSON string from the api
     Called when browse button is clicked from BrowseButton()
-    Parses Json and creates table listing names and years of all neos
+    Parses Json and creates table with course titles and course information snapshot
     */
-    console.log("one");
 
     var course_list = JSON.parse(responseText);
-        console.log("two");
-    //document.getElementById("input").innerHTML = course_list;
     var tableBody = '';
     tableBody += '<thead><tr>';
-    tableBody += '<td>' + 'Course </td>';
+    tableBody += '<td> Course </td>';
     tableBody += '<td> Course Name </td>';
     tableBody += '<td> Start Time </td>';
     tableBody += '<td> End Time </td>';
@@ -78,10 +75,6 @@ function coursesCallback(responseText) {
         tableBody += '</tr>';
 
     }
-    //     // var objString = replaceAll(obj, " ", "%20")
-    //     // tableBody += '<td><a onclick="getCourses(' + obj + ")>" + '<a href='+ 'info/' + objString + '>' + obj + '</a></td>';
-    //     // var date = course_list[k].split(" ")[0];
-    //     tableBody += '<td><a onclick="getCourses()"</td>'
     tableBody += '</tbody>'
     console.log("Here we are");
     // var tableBody = "Hello";
@@ -119,7 +112,11 @@ function onBrowseByButton(){
 function on(){
     document.getElementById("overlay").style.display = "block";
     var overlay_text = document.getElementById("text");
-    overlay_text.innerHTML = "Hello";
+    var info_table = '';
+    info_table += '<thead><tr>';
+    info_table += '<td> Summary </td>';
+    info_table += '<td> Requirements Met </td>';
+    overlay_text.innerHTML = info_table;
 }
 function off(){
     document.getElementById("overlay").style.display = 'none';

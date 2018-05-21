@@ -1,0 +1,1748 @@
+[
+ {
+   "FIELD1": "ï»¿\"averageratingscore_rf\"",
+   "FIELD2": "pk_id",
+   "FIELD3": "total_number_of_ratings_i",
+   "FIELD4": "teacherfirstname_t",
+   "FIELD5": "teacherlastname_t",
+   "FIELD6": "status",
+   "FIELD7": "discipline"
+ },
+ {
+   "FIELD1": "5",
+   "FIELD2": "666107",
+   "FIELD3": "4",
+   "FIELD4": "Clara",
+   "FIELD5": "Hardy",
+   "FIELD6": "professor",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "4",
+   "FIELD2": "851048",
+   "FIELD3": "4",
+   "FIELD4": "Clark",
+   "FIELD5": "Ohnesgorge",
+   "FIELD6": "research associate",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "2.75",
+   "FIELD2": "1198750",
+   "FIELD3": "4",
+   "FIELD4": "Cliff",
+   "FIELD5": "Clark",
+   "FIELD6": "professor",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "3.25",
+   "FIELD2": "1248500",
+   "FIELD3": "4",
+   "FIELD4": "Mary",
+   "FIELD5": "Savina",
+   "FIELD6": "professor",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "4.3",
+   "FIELD2": "1287695",
+   "FIELD3": "4",
+   "FIELD4": "Michael",
+   "FIELD5": "McNally",
+   "FIELD6": "professor",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "4.5",
+   "FIELD2": "1477495",
+   "FIELD3": "4",
+   "FIELD4": "Yansi",
+   "FIELD5": "Perez",
+   "FIELD6": "associate",
+   "FIELD7": "language"
+ },
+ {
+   "FIELD1": "4.3",
+   "FIELD2": "1542658",
+   "FIELD3": "4",
+   "FIELD4": "Constance",
+   "FIELD5": "Walker",
+   "FIELD6": "professor",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "4.4",
+   "FIELD2": "1580441",
+   "FIELD3": "4",
+   "FIELD4": "Jennifer",
+   "FIELD5": "Wolff",
+   "FIELD6": "associate",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "2.3",
+   "FIELD2": "1881485",
+   "FIELD3": "4",
+   "FIELD4": "Will",
+   "FIELD5": "Hollingsworth",
+   "FIELD6": "professor",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "4.7",
+   "FIELD2": "2119377",
+   "FIELD3": "4",
+   "FIELD4": "Ania",
+   "FIELD5": "Lubowicz",
+   "FIELD6": "assistant",
+   "FIELD7": "social science"
+ },
+ {
+   "FIELD1": "4.8",
+   "FIELD2": "2179817",
+   "FIELD3": "4",
+   "FIELD4": "Eric",
+   "FIELD5": "Alexander",
+   "FIELD6": "assistant",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "2.88",
+   "FIELD2": "1461302",
+   "FIELD3": "4",
+   "FIELD4": "Cherif",
+   "FIELD5": "Keita",
+   "FIELD6": "professor",
+   "FIELD7": "language"
+ },
+ {
+   "FIELD1": "4",
+   "FIELD2": "2118975",
+   "FIELD3": "4",
+   "FIELD4": "Sharon",
+   "FIELD5": "Akimoto",
+   "FIELD6": "professor",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "2.3",
+   "FIELD2": "2157805",
+   "FIELD3": "4",
+   "FIELD4": "Jeremy",
+   "FIELD5": "DeAngelo",
+   "FIELD6": "assistant",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "4.8",
+   "FIELD2": "1492495",
+   "FIELD3": "4",
+   "FIELD4": "Ross",
+   "FIELD5": "Elfline",
+   "FIELD6": "associate",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "5",
+   "FIELD2": "1761972",
+   "FIELD3": "4",
+   "FIELD4": "Baird",
+   "FIELD5": "Jarman",
+   "FIELD6": "associate",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "4.8",
+   "FIELD2": "1904894",
+   "FIELD3": "4",
+   "FIELD4": "Chris",
+   "FIELD5": "Calderone",
+   "FIELD6": "assistant",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "5",
+   "FIELD2": "2282524",
+   "FIELD3": "4",
+   "FIELD4": "Owen",
+   "FIELD5": "Biesel",
+   "FIELD6": "assistant",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "2.25",
+   "FIELD2": "2261795",
+   "FIELD3": "4",
+   "FIELD4": "Yaniv",
+   "FIELD5": "Ben-Ami",
+   "FIELD6": "assistant",
+   "FIELD7": "social science"
+ },
+ {
+   "FIELD1": "4.5",
+   "FIELD2": "2168739",
+   "FIELD3": "4",
+   "FIELD4": "Liz",
+   "FIELD5": "Sattler",
+   "FIELD6": "assistant",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "4.5",
+   "FIELD2": "1851041",
+   "FIELD3": "5",
+   "FIELD4": "Paul",
+   "FIELD5": "Petzschmann",
+   "FIELD6": "lecturer",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "4.8",
+   "FIELD2": "1882683",
+   "FIELD3": "5",
+   "FIELD4": "Roger",
+   "FIELD5": "Bechtel",
+   "FIELD6": "professor",
+   "FIELD7": "arts"
+ },
+ {
+   "FIELD1": "3.5",
+   "FIELD2": "1945130",
+   "FIELD3": "5",
+   "FIELD4": "Alex",
+   "FIELD5": "Knodell",
+   "FIELD6": "assistant",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "3.2",
+   "FIELD2": "2023753",
+   "FIELD3": "5",
+   "FIELD4": "Eric",
+   "FIELD5": "Hazlett",
+   "FIELD6": "assistant",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "4.5",
+   "FIELD2": "2057105",
+   "FIELD3": "5",
+   "FIELD4": "Adam",
+   "FIELD5": "Putnam",
+   "FIELD6": "assistant",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "4.1",
+   "FIELD2": "2059220",
+   "FIELD3": "5",
+   "FIELD4": "Rob",
+   "FIELD5": "Thompson",
+   "FIELD6": "assistant",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "4",
+   "FIELD2": "2149880",
+   "FIELD3": "5",
+   "FIELD4": "Melanie",
+   "FIELD5": "Freeze",
+   "FIELD6": "assistant",
+   "FIELD7": "social science"
+ },
+ {
+   "FIELD1": "5",
+   "FIELD2": "2168058",
+   "FIELD3": "5",
+   "FIELD4": "Kevin",
+   "FIELD5": "Wolfe",
+   "FIELD6": "assistant",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "4.2",
+   "FIELD2": "1461496",
+   "FIELD3": "5",
+   "FIELD4": "Arnab",
+   "FIELD5": "Chakladar",
+   "FIELD6": "associate",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "4.9",
+   "FIELD2": "1516245",
+   "FIELD3": "5",
+   "FIELD4": "Daniel",
+   "FIELD5": "Bruggeman",
+   "FIELD6": "senior lecturer",
+   "FIELD7": "arts"
+ },
+ {
+   "FIELD1": "3.9",
+   "FIELD2": "2022578",
+   "FIELD3": "5",
+   "FIELD4": "Douglas",
+   "FIELD5": "Marshall",
+   "FIELD6": "assistant",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "3.9",
+   "FIELD2": "2111375",
+   "FIELD3": "5",
+   "FIELD4": "Layla",
+   "FIELD5": "Oesper",
+   "FIELD6": "assistant",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "3",
+   "FIELD2": "2155858",
+   "FIELD3": "5",
+   "FIELD4": "Mariko",
+   "FIELD5": "Kaga",
+   "FIELD6": "professor",
+   "FIELD7": "language"
+ },
+ {
+   "FIELD1": "4.6",
+   "FIELD2": "1530320",
+   "FIELD3": "5",
+   "FIELD4": "Sarah",
+   "FIELD5": "Titus",
+   "FIELD6": "associate",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "2.9",
+   "FIELD2": "1461303",
+   "FIELD3": "5",
+   "FIELD4": "Bereket",
+   "FIELD5": "Haileab",
+   "FIELD6": "professor",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "4.63",
+   "FIELD2": "133957",
+   "FIELD3": "4",
+   "FIELD4": "Kofi",
+   "FIELD5": "Owusu",
+   "FIELD6": "professor",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "3.38",
+   "FIELD2": "142751",
+   "FIELD3": "4",
+   "FIELD4": "Chiara",
+   "FIELD5": "Briganti",
+   "FIELD6": "professor",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "4.38",
+   "FIELD2": "149297",
+   "FIELD3": "4",
+   "FIELD4": "Annette",
+   "FIELD5": "Igra",
+   "FIELD6": "professor",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "4",
+   "FIELD2": "162179",
+   "FIELD3": "4",
+   "FIELD4": "Phillip",
+   "FIELD5": "Rhodes",
+   "FIELD6": "professor",
+   "FIELD7": "arts"
+ },
+ {
+   "FIELD1": "4.4",
+   "FIELD2": "1823527",
+   "FIELD3": "6",
+   "FIELD4": "Victoria",
+   "FIELD5": "Morse",
+   "FIELD6": "professor",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "3.3",
+   "FIELD2": "1882606",
+   "FIELD3": "6",
+   "FIELD4": "Anna",
+   "FIELD5": "Moltchanova",
+   "FIELD6": "professor",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "4.6",
+   "FIELD2": "1915945",
+   "FIELD3": "6",
+   "FIELD4": "Jay",
+   "FIELD5": "Beck",
+   "FIELD6": "associate",
+   "FIELD7": "arts"
+ },
+ {
+   "FIELD1": "3.75",
+   "FIELD2": "1592313",
+   "FIELD3": "6",
+   "FIELD4": "Sarah",
+   "FIELD5": "Meerts",
+   "FIELD6": "associate",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "4.8",
+   "FIELD2": "2154863",
+   "FIELD3": "6",
+   "FIELD4": "Frank",
+   "FIELD5": "McNally",
+   "FIELD6": "assistant",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "4.5",
+   "FIELD2": "2033930",
+   "FIELD3": "6",
+   "FIELD4": "Miaki",
+   "FIELD5": "Habuka",
+   "FIELD6": "visiting instructor",
+   "FIELD7": "language"
+ },
+ {
+   "FIELD1": "4.33",
+   "FIELD2": "2209118",
+   "FIELD3": "6",
+   "FIELD4": "Wes",
+   "FIELD5": "Markofski",
+   "FIELD6": "assistant",
+   "FIELD7": "social science"
+ },
+ {
+   "FIELD1": "3.5",
+   "FIELD2": "1494339",
+   "FIELD3": "6",
+   "FIELD4": "Thabiti",
+   "FIELD5": "Willis",
+   "FIELD6": "associate",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "2.58",
+   "FIELD2": "1477494",
+   "FIELD3": "6",
+   "FIELD4": "Humberto",
+   "FIELD5": "Huergo",
+   "FIELD6": "professor",
+   "FIELD7": "language"
+ },
+ {
+   "FIELD1": "4.4",
+   "FIELD2": "439999",
+   "FIELD3": "5",
+   "FIELD4": "Noboru",
+   "FIELD5": "Tomonari",
+   "FIELD6": "associate",
+   "FIELD7": "language"
+ },
+ {
+   "FIELD1": "5",
+   "FIELD2": "538970",
+   "FIELD3": "5",
+   "FIELD4": "Eva",
+   "FIELD5": "Posfay",
+   "FIELD6": "professor",
+   "FIELD7": "language"
+ },
+ {
+   "FIELD1": "4.3",
+   "FIELD2": "1007662",
+   "FIELD3": "5",
+   "FIELD4": "Justin",
+   "FIELD5": "London",
+   "FIELD6": "professor",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "4",
+   "FIELD2": "1258425",
+   "FIELD3": "5",
+   "FIELD4": "Carol",
+   "FIELD5": "Rutz",
+   "FIELD6": "senior lecturer",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "3.7",
+   "FIELD2": "1362153",
+   "FIELD3": "5",
+   "FIELD4": "David",
+   "FIELD5": "Wiles",
+   "FIELD6": "associate",
+   "FIELD7": "arts"
+ },
+ {
+   "FIELD1": "4",
+   "FIELD2": "1412828",
+   "FIELD3": "5",
+   "FIELD4": "Daniel",
+   "FIELD5": "Hernandez",
+   "FIELD6": "associate",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "4.7",
+   "FIELD2": "1696255",
+   "FIELD3": "5",
+   "FIELD4": "Christine",
+   "FIELD5": "Lac",
+   "FIELD6": "senior lecturer",
+   "FIELD7": "language"
+ },
+ {
+   "FIELD1": "4.7",
+   "FIELD2": "1768251",
+   "FIELD3": "5",
+   "FIELD4": "Cindy",
+   "FIELD5": "Blaha",
+   "FIELD6": "professor",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "4.5",
+   "FIELD2": "1847451",
+   "FIELD3": "5",
+   "FIELD4": "Mija",
+   "FIELD5": "Van Der Wege",
+   "FIELD6": "associate",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "4.43",
+   "FIELD2": "1229584",
+   "FIELD3": "7",
+   "FIELD4": "George",
+   "FIELD5": "Vrtis",
+   "FIELD6": "associate",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "4.6",
+   "FIELD2": "1468086",
+   "FIELD3": "7",
+   "FIELD4": "Sherri",
+   "FIELD5": "Goings",
+   "FIELD6": "assistant",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "3.8",
+   "FIELD2": "1511074",
+   "FIELD3": "7",
+   "FIELD4": "Sam",
+   "FIELD5": "Patterson",
+   "FIELD6": "professor",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "4.9",
+   "FIELD2": "1683199",
+   "FIELD3": "7",
+   "FIELD4": "Stacy",
+   "FIELD5": "Beckwith",
+   "FIELD6": "professor",
+   "FIELD7": "language"
+ },
+ {
+   "FIELD1": "4.6",
+   "FIELD2": "1768065",
+   "FIELD3": "7",
+   "FIELD4": "Beatriz",
+   "FIELD5": "Pariente-Beltran",
+   "FIELD6": "lecturer",
+   "FIELD7": "language"
+ },
+ {
+   "FIELD1": "4.7",
+   "FIELD2": "1861929",
+   "FIELD3": "7",
+   "FIELD4": "Anita",
+   "FIELD5": "Chikkatur",
+   "FIELD6": "associate ",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "4.7",
+   "FIELD2": "2168055",
+   "FIELD3": "7",
+   "FIELD4": "Jeff",
+   "FIELD5": "Snyder",
+   "FIELD6": "assistant",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "2",
+   "FIELD2": "2017131",
+   "FIELD3": "7",
+   "FIELD4": "Claudia",
+   "FIELD5": "Lange",
+   "FIELD6": "instructor",
+   "FIELD7": "language"
+ },
+ {
+   "FIELD1": "4.75",
+   "FIELD2": "142756",
+   "FIELD3": "6",
+   "FIELD4": "Frank",
+   "FIELD5": "Morral",
+   "FIELD6": "professor",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "3.9",
+   "FIELD2": "230046",
+   "FIELD3": "6",
+   "FIELD4": "Susannah",
+   "FIELD5": "Ottaway",
+   "FIELD6": "professor",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "4.17",
+   "FIELD2": "440003",
+   "FIELD3": "6",
+   "FIELD4": "Fernan",
+   "FIELD5": "Jaramillo",
+   "FIELD6": "professor",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "4.58",
+   "FIELD2": "1143179",
+   "FIELD3": "6",
+   "FIELD4": "Alex",
+   "FIELD5": "Freeman",
+   "FIELD6": "assistant",
+   "FIELD7": "arts"
+ },
+ {
+   "FIELD1": "4.08",
+   "FIELD2": "1258423",
+   "FIELD3": "6",
+   "FIELD4": "Raka",
+   "FIELD5": "Mitra",
+   "FIELD6": "associate",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "3.67",
+   "FIELD2": "1408097",
+   "FIELD3": "6",
+   "FIELD4": "Roger",
+   "FIELD5": "Paas",
+   "FIELD6": "professor",
+   "FIELD7": "language"
+ },
+ {
+   "FIELD1": "3.9",
+   "FIELD2": "1580080",
+   "FIELD3": "6",
+   "FIELD4": "Timothy",
+   "FIELD5": "Raylor",
+   "FIELD6": "professor",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "3.3",
+   "FIELD2": "1795195",
+   "FIELD3": "6",
+   "FIELD4": "Gail",
+   "FIELD5": "Nelson",
+   "FIELD6": "professor",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "5",
+   "FIELD2": "1461300",
+   "FIELD3": "8",
+   "FIELD4": "Adriana",
+   "FIELD5": "Estill",
+   "FIELD6": "associate",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "4.8",
+   "FIELD2": "1461313",
+   "FIELD3": "8",
+   "FIELD4": "Jason",
+   "FIELD5": "Decker",
+   "FIELD6": "associate",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "4.94",
+   "FIELD2": "1492498",
+   "FIELD3": "8",
+   "FIELD4": "Kathleen",
+   "FIELD5": "Ryor",
+   "FIELD6": "professor",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "4.3",
+   "FIELD2": "1681444",
+   "FIELD3": "8",
+   "FIELD4": "Stephanie",
+   "FIELD5": "Cox",
+   "FIELD6": "senior lecturer",
+   "FIELD7": "language"
+ },
+ {
+   "FIELD1": "4.7",
+   "FIELD2": "1789806",
+   "FIELD3": "8",
+   "FIELD4": "Deanna",
+   "FIELD5": "Haunsperger",
+   "FIELD6": "Professor",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "3.8",
+   "FIELD2": "1848646",
+   "FIELD3": "8",
+   "FIELD4": "Martha",
+   "FIELD5": "Paas",
+   "FIELD6": "professor",
+   "FIELD7": "social science"
+ },
+ {
+   "FIELD1": "5",
+   "FIELD2": "2179387",
+   "FIELD3": "8",
+   "FIELD4": "Sonja",
+   "FIELD5": "Anderson",
+   "FIELD6": "assistant",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "5",
+   "FIELD2": "1461498",
+   "FIELD3": "8",
+   "FIELD4": "Elizabeth",
+   "FIELD5": "McKinsey",
+   "FIELD6": "professor",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "3.56",
+   "FIELD2": "916143",
+   "FIELD3": "8",
+   "FIELD4": "Radek",
+   "FIELD5": "Szulga",
+   "FIELD6": "assistant",
+   "FIELD7": "social science"
+ },
+ {
+   "FIELD1": "4.2",
+   "FIELD2": "1491053",
+   "FIELD3": "8",
+   "FIELD4": "Andrew",
+   "FIELD5": "Fisher",
+   "FIELD6": "professor",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "4.5",
+   "FIELD2": "1201821",
+   "FIELD3": "8",
+   "FIELD4": "Daniela",
+   "FIELD5": "Kohen",
+   "FIELD6": "professor",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "3.71",
+   "FIELD2": "133948",
+   "FIELD3": "7",
+   "FIELD4": "Roy",
+   "FIELD5": "Elveton",
+   "FIELD6": "professor",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "4.57",
+   "FIELD2": "142763",
+   "FIELD3": "7",
+   "FIELD4": "Mike",
+   "FIELD5": "Hemesath",
+   "FIELD6": "professor",
+   "FIELD7": "social science"
+ },
+ {
+   "FIELD1": "3",
+   "FIELD2": "149325",
+   "FIELD3": "7",
+   "FIELD4": "Pamela",
+   "FIELD5": "Feldman-Savelsberg",
+   "FIELD6": "professor",
+   "FIELD7": "social science"
+ },
+ {
+   "FIELD1": "3.07",
+   "FIELD2": "162181",
+   "FIELD3": "7",
+   "FIELD4": "Becky",
+   "FIELD5": "Boling",
+   "FIELD6": "professor",
+   "FIELD7": "language"
+ },
+ {
+   "FIELD1": "3.57",
+   "FIELD2": "501142",
+   "FIELD3": "7",
+   "FIELD4": "Roy",
+   "FIELD5": "Grow",
+   "FIELD6": "professor",
+   "FIELD7": "social science"
+ },
+ {
+   "FIELD1": "3.5",
+   "FIELD2": "576535",
+   "FIELD3": "7",
+   "FIELD4": "Silvia",
+   "FIELD5": "Lopez",
+   "FIELD6": "professor",
+   "FIELD7": "language"
+ },
+ {
+   "FIELD1": "4.86",
+   "FIELD2": "837238",
+   "FIELD3": "7",
+   "FIELD4": "Steven",
+   "FIELD5": "Drew",
+   "FIELD6": "professor",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "2.86",
+   "FIELD2": "855370",
+   "FIELD3": "7",
+   "FIELD4": "Steve",
+   "FIELD5": "Strand",
+   "FIELD6": "professor",
+   "FIELD7": "social science"
+ },
+ {
+   "FIELD1": "4.21",
+   "FIELD2": "905549",
+   "FIELD3": "7",
+   "FIELD4": "Carol",
+   "FIELD5": "Donelan",
+   "FIELD6": "professor",
+   "FIELD7": "arts"
+ },
+ {
+   "FIELD1": "3.33",
+   "FIELD2": "133971",
+   "FIELD3": "9",
+   "FIELD4": "Hector",
+   "FIELD5": "Valdivia",
+   "FIELD6": "professor",
+   "FIELD7": "arts"
+ },
+ {
+   "FIELD1": "4.83",
+   "FIELD2": "538971",
+   "FIELD3": "9",
+   "FIELD4": "Scott",
+   "FIELD5": "Carpenter",
+   "FIELD6": "professor",
+   "FIELD7": "language"
+ },
+ {
+   "FIELD1": "3.67",
+   "FIELD2": "1201112",
+   "FIELD3": "9",
+   "FIELD4": "Stephen",
+   "FIELD5": "Kennedy",
+   "FIELD6": "professor",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "5",
+   "FIELD2": "1358748",
+   "FIELD3": "9",
+   "FIELD4": "Nancy",
+   "FIELD5": "Cho",
+   "FIELD6": "professor",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "4.7",
+   "FIELD2": "1461314",
+   "FIELD3": "9",
+   "FIELD4": "Daniel",
+   "FIELD5": "Groll",
+   "FIELD6": "associate ",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "3.6",
+   "FIELD2": "1463051",
+   "FIELD3": "9",
+   "FIELD4": "Sarah",
+   "FIELD5": "Deel",
+   "FIELD6": "senior lecturer",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "4.8",
+   "FIELD2": "1737910",
+   "FIELD3": "9",
+   "FIELD4": "Matt",
+   "FIELD5": "Whited",
+   "FIELD6": "associate",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "4.3",
+   "FIELD2": "1933552",
+   "FIELD3": "9",
+   "FIELD4": "Gregory",
+   "FIELD5": "Hewett",
+   "FIELD6": "professor",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "4.1",
+   "FIELD2": "567680",
+   "FIELD3": "9",
+   "FIELD4": "Stephan",
+   "FIELD5": "Zweifel",
+   "FIELD6": "professor",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "3.83",
+   "FIELD2": "2126269",
+   "FIELD3": "9",
+   "FIELD4": "Katie",
+   "FIELD5": "St. Clair",
+   "FIELD6": "associate",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "4.4",
+   "FIELD2": "1464444",
+   "FIELD3": "9",
+   "FIELD4": "David",
+   "FIELD5": "Musicant",
+   "FIELD6": "professor",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "3.9",
+   "FIELD2": "1696862",
+   "FIELD3": "9",
+   "FIELD4": "Amna",
+   "FIELD5": "Khalid",
+   "FIELD6": "assistant",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "5",
+   "FIELD2": "2001606",
+   "FIELD3": "9",
+   "FIELD4": "Constanza",
+   "FIELD5": "Ocampo-Raeder",
+   "FIELD6": "assistant",
+   "FIELD7": "social science"
+ },
+ {
+   "FIELD1": "2.9",
+   "FIELD2": "2156237",
+   "FIELD3": "9",
+   "FIELD4": "Josh",
+   "FIELD5": "Davis",
+   "FIELD6": "lecturer",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "2.5",
+   "FIELD2": "1752607",
+   "FIELD3": "9",
+   "FIELD4": "Tsegaye",
+   "FIELD5": "Nega",
+   "FIELD6": "associate",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "5",
+   "FIELD2": "538973",
+   "FIELD3": "9",
+   "FIELD4": "Cathy",
+   "FIELD5": "Yandell",
+   "FIELD6": "professor",
+   "FIELD7": "language"
+ },
+ {
+   "FIELD1": "3.69",
+   "FIELD2": "149196",
+   "FIELD3": "8",
+   "FIELD4": "Diethelm",
+   "FIELD5": "Prowe",
+   "FIELD6": "professor",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "4.56",
+   "FIELD2": "261878",
+   "FIELD3": "8",
+   "FIELD4": "Roger",
+   "FIELD5": "Jackson|",
+   "FIELD6": "professor",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "4",
+   "FIELD2": "1313350",
+   "FIELD3": "8",
+   "FIELD4": "Bill",
+   "FIELD5": "Titus",
+   "FIELD6": "professor",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "3.9",
+   "FIELD2": "1418351",
+   "FIELD3": "8",
+   "FIELD4": "Bob",
+   "FIELD5": "Dobrow",
+   "FIELD6": "professor",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "3.5",
+   "FIELD2": "459018",
+   "FIELD3": "12",
+   "FIELD4": "Joel",
+   "FIELD5": "Weisberg",
+   "FIELD6": "professor",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "3.4",
+   "FIELD2": "1994718",
+   "FIELD3": "12",
+   "FIELD4": "Kristin",
+   "FIELD5": "Bloomer",
+   "FIELD6": "associate",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "4.09",
+   "FIELD2": "440004",
+   "FIELD3": "11",
+   "FIELD4": "John",
+   "FIELD5": "Tymoczko",
+   "FIELD6": "professor",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "4.41",
+   "FIELD2": "480991",
+   "FIELD3": "11",
+   "FIELD4": "Cameron",
+   "FIELD5": "Davidson",
+   "FIELD6": "professor",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "4",
+   "FIELD2": "1477497",
+   "FIELD3": "11",
+   "FIELD4": "Mark",
+   "FIELD5": "McKone",
+   "FIELD6": "professor",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "4.5",
+   "FIELD2": "1814091",
+   "FIELD3": "11",
+   "FIELD4": "Liz",
+   "FIELD5": "Raleigh",
+   "FIELD6": "assistant",
+   "FIELD7": "social science"
+ },
+ {
+   "FIELD1": "5",
+   "FIELD2": "2020834",
+   "FIELD3": "11",
+   "FIELD4": "Asuka",
+   "FIELD5": "Sango",
+   "FIELD6": "associate",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "4.5",
+   "FIELD2": "1638013",
+   "FIELD3": "11",
+   "FIELD4": "David",
+   "FIELD5": "Alberg",
+   "FIELD6": "professor",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "4.5",
+   "FIELD2": "2058591",
+   "FIELD3": "11",
+   "FIELD4": "Greg",
+   "FIELD5": "Marfleet",
+   "FIELD6": "professor",
+   "FIELD7": "social science"
+ },
+ {
+   "FIELD1": "4.35",
+   "FIELD2": "162180",
+   "FIELD3": "10",
+   "FIELD4": "Chico",
+   "FIELD5": "Zimmerman",
+   "FIELD6": "professor",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "4.9",
+   "FIELD2": "204320",
+   "FIELD3": "10",
+   "FIELD4": "George",
+   "FIELD5": "Shuffelton",
+   "FIELD6": "professor",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "4.5",
+   "FIELD2": "365872",
+   "FIELD3": "10",
+   "FIELD4": "David",
+   "FIELD5": "Appleyard",
+   "FIELD6": "professor",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "3.9",
+   "FIELD2": "1542589",
+   "FIELD3": "10",
+   "FIELD4": "Marty",
+   "FIELD5": "Baylor",
+   "FIELD6": "associate",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "4.2",
+   "FIELD2": "1547958",
+   "FIELD3": "10",
+   "FIELD4": "Linda",
+   "FIELD5": "Burdell",
+   "FIELD6": "senior lecturer ",
+   "FIELD7": "language"
+ },
+ {
+   "FIELD1": "2.8",
+   "FIELD2": "1768064",
+   "FIELD3": "10",
+   "FIELD4": "Andrew",
+   "FIELD5": "Gainer-Dewar",
+   "FIELD6": "assistant ",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "4.9",
+   "FIELD2": "1799687",
+   "FIELD3": "10",
+   "FIELD4": "Julia",
+   "FIELD5": "Strand",
+   "FIELD6": "assistant ",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "4.7",
+   "FIELD2": "2108435",
+   "FIELD3": "10",
+   "FIELD4": "Kent",
+   "FIELD5": "Freeze",
+   "FIELD6": "assistant ",
+   "FIELD7": "social science"
+ },
+ {
+   "FIELD1": "4.3",
+   "FIELD2": "142746",
+   "FIELD3": "10",
+   "FIELD4": "Susan",
+   "FIELD5": "Jaret-Mckinstry",
+   "FIELD6": "professor",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "3.7",
+   "FIELD2": "2174718",
+   "FIELD3": "10",
+   "FIELD4": "Bruce",
+   "FIELD5": "Dalgaard",
+   "FIELD6": "visiting professor",
+   "FIELD7": "social science"
+ },
+ {
+   "FIELD1": "4.56",
+   "FIELD2": "89420",
+   "FIELD3": "9",
+   "FIELD4": "Lawrence",
+   "FIELD5": "Archbold",
+   "FIELD6": "professor",
+   "FIELD7": "arts"
+ },
+ {
+   "FIELD1": "3.3",
+   "FIELD2": "846750",
+   "FIELD3": "15",
+   "FIELD4": "Julie",
+   "FIELD5": "Neiworth",
+   "FIELD6": "professor",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "2.8",
+   "FIELD2": "1987995",
+   "FIELD3": "15",
+   "FIELD4": "Ben",
+   "FIELD5": "Keefer",
+   "FIELD6": "assistant ",
+   "FIELD7": "social science"
+ },
+ {
+   "FIELD1": "4.8",
+   "FIELD2": "1439832",
+   "FIELD3": "15",
+   "FIELD4": "Eric",
+   "FIELD5": "Egge",
+   "FIELD6": "professor",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "4.8",
+   "FIELD2": "143395",
+   "FIELD3": "14",
+   "FIELD4": "Larry",
+   "FIELD5": "Wichlinski",
+   "FIELD6": "associate",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "4.1",
+   "FIELD2": "1158115",
+   "FIELD3": "14",
+   "FIELD4": "Neil",
+   "FIELD5": "Lutsky",
+   "FIELD6": "professor",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "4.5",
+   "FIELD2": "1645524",
+   "FIELD3": "14",
+   "FIELD4": "Helen",
+   "FIELD5": "Wong",
+   "FIELD6": "associate",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "2.8",
+   "FIELD2": "739999",
+   "FIELD3": "14",
+   "FIELD4": "Amy",
+   "FIELD5": "Csizmar Dalal",
+   "FIELD6": "professor",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "4.12",
+   "FIELD2": "52000",
+   "FIELD3": "13",
+   "FIELD4": "Matt",
+   "FIELD5": "Rand",
+   "FIELD6": "professor",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "4.5",
+   "FIELD2": "234761",
+   "FIELD3": "13",
+   "FIELD4": "Andrew",
+   "FIELD5": "Flory",
+   "FIELD6": "associate",
+   "FIELD7": "arts"
+ },
+ {
+   "FIELD1": "4.7",
+   "FIELD2": "1350697",
+   "FIELD3": "13",
+   "FIELD4": "Palmar",
+   "FIELD5": "Alvarez-Blanco",
+   "FIELD6": "associate",
+   "FIELD7": "language"
+ },
+ {
+   "FIELD1": "4.3",
+   "FIELD2": "2055355",
+   "FIELD3": "13",
+   "FIELD4": "Anna",
+   "FIELD5": "Rafferty",
+   "FIELD6": "assistant",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "4.6",
+   "FIELD2": "1191919",
+   "FIELD3": "13",
+   "FIELD4": "Jessica",
+   "FIELD5": "Leiman",
+   "FIELD6": "associate",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "4.1",
+   "FIELD2": "339167",
+   "FIELD3": "12",
+   "FIELD4": "Barbara",
+   "FIELD5": "Allen",
+   "FIELD6": "professor",
+   "FIELD7": "social science"
+ },
+ {
+   "FIELD1": "3.5",
+   "FIELD2": "426190",
+   "FIELD3": "12",
+   "FIELD4": "Peter",
+   "FIELD5": "Balaam",
+   "FIELD6": "associate",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "3.6",
+   "FIELD2": "437573",
+   "FIELD3": "12",
+   "FIELD4": "Jeff",
+   "FIELD5": "Ondich",
+   "FIELD6": "professor",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "4.5",
+   "FIELD2": "1542602",
+   "FIELD3": "12",
+   "FIELD4": "Noah",
+   "FIELD5": "Salomon",
+   "FIELD6": "associate",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "4.5",
+   "FIELD2": "1884268",
+   "FIELD3": "12",
+   "FIELD4": "David",
+   "FIELD5": "Tompkins",
+   "FIELD6": "associate",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "4.8",
+   "FIELD2": "1164926",
+   "FIELD3": "12",
+   "FIELD4": "Laurence",
+   "FIELD5": "Cooper",
+   "FIELD6": "professor",
+   "FIELD7": "social science"
+ },
+ {
+   "FIELD1": "4.8",
+   "FIELD2": "133942",
+   "FIELD3": "12",
+   "FIELD4": "Melinda",
+   "FIELD5": "Russell",
+   "FIELD6": "professor",
+   "FIELD7": "arts"
+ },
+ {
+   "FIELD1": "4.5",
+   "FIELD2": "1987508",
+   "FIELD3": "12",
+   "FIELD4": "Prathi",
+   "FIELD5": "Seneviratne",
+   "FIELD6": "assistant",
+   "FIELD7": "social science"
+ },
+ {
+   "FIELD1": "4.3",
+   "FIELD2": "310617",
+   "FIELD3": "19",
+   "FIELD4": "Mark",
+   "FIELD5": "Hansell",
+   "FIELD6": "professor",
+   "FIELD7": "language"
+ },
+ {
+   "FIELD1": "4.84",
+   "FIELD2": "1461312",
+   "FIELD3": "19",
+   "FIELD4": "Shana",
+   "FIELD5": "Sippy",
+   "FIELD6": "research associate",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "2.6",
+   "FIELD2": "2149879",
+   "FIELD3": "19",
+   "FIELD4": "Bryan",
+   "FIELD5": "Daves",
+   "FIELD6": "instructor",
+   "FIELD7": "social science"
+ },
+ {
+   "FIELD1": "4",
+   "FIELD2": "1858384",
+   "FIELD3": "19",
+   "FIELD4": "Cati",
+   "FIELD5": "Fortin",
+   "FIELD6": "associate",
+   "FIELD7": "social science"
+ },
+ {
+   "FIELD1": "3",
+   "FIELD2": "2155857",
+   "FIELD3": "19",
+   "FIELD4": "Jed",
+   "FIELD5": "Yang",
+   "FIELD6": "assistant",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "4",
+   "FIELD2": "1583527",
+   "FIELD3": "19",
+   "FIELD4": "Aaron",
+   "FIELD5": "Swoboda",
+   "FIELD6": "assistant",
+   "FIELD7": "social science"
+ },
+ {
+   "FIELD1": "4.8",
+   "FIELD2": "1254990",
+   "FIELD3": "18",
+   "FIELD4": "Dev",
+   "FIELD5": "Gupta",
+   "FIELD6": "associate",
+   "FIELD7": "social science"
+ },
+ {
+   "FIELD1": "4.5",
+   "FIELD2": "134890",
+   "FIELD3": "18",
+   "FIELD4": "Kathleen",
+   "FIELD5": "Galotti",
+   "FIELD6": "professor",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "4.3",
+   "FIELD2": "234632",
+   "FIELD3": "17",
+   "FIELD4": "Clint",
+   "FIELD5": "Cowan",
+   "FIELD6": "professor",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "4.2",
+   "FIELD2": "637276",
+   "FIELD3": "16",
+   "FIELD4": "Kim",
+   "FIELD5": "Smith",
+   "FIELD6": "professor",
+   "FIELD7": "social science"
+ },
+ {
+   "FIELD1": "4.7",
+   "FIELD2": "2157183",
+   "FIELD3": "16",
+   "FIELD4": "Shane",
+   "FIELD5": "Auerbach",
+   "FIELD6": "instructor",
+   "FIELD7": "social science"
+ },
+ {
+   "FIELD1": "4.4",
+   "FIELD2": "1259347",
+   "FIELD3": "16",
+   "FIELD4": "Ken",
+   "FIELD5": "Abrams",
+   "FIELD6": "associate",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "1.25",
+   "FIELD2": "2167837",
+   "FIELD3": "16",
+   "FIELD4": "Theresa",
+   "FIELD5": "Bauer",
+   "FIELD6": "instructor",
+   "FIELD7": "social science"
+ },
+ {
+   "FIELD1": "4.5",
+   "FIELD2": "149304",
+   "FIELD3": "16",
+   "FIELD4": "Laura",
+   "FIELD5": "Chihara",
+   "FIELD6": "professor",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "4.7",
+   "FIELD2": "1546634",
+   "FIELD3": "16",
+   "FIELD4": "Faress",
+   "FIELD5": "Bhuiyan",
+   "FIELD6": "associate",
+   "FIELD7": "social science"
+ },
+ {
+   "FIELD1": "3.1",
+   "FIELD2": "149299",
+   "FIELD3": "15",
+   "FIELD4": "Annette",
+   "FIELD5": "Nierobisz",
+   "FIELD6": "professor",
+   "FIELD7": "social science"
+ },
+ {
+   "FIELD1": "4.3",
+   "FIELD2": "310615",
+   "FIELD3": "15",
+   "FIELD4": "Harry",
+   "FIELD5": "Williams",
+   "FIELD6": "professor",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "4.6",
+   "FIELD2": "1376704",
+   "FIELD3": "15",
+   "FIELD4": "David",
+   "FIELD5": "Liben-Nowell",
+   "FIELD6": "professor",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "4.4",
+   "FIELD2": "2052080",
+   "FIELD3": "15",
+   "FIELD4": "Cherlon",
+   "FIELD5": "Ussery",
+   "FIELD6": "associate",
+   "FIELD7": "social science"
+ },
+ {
+   "FIELD1": "4.4",
+   "FIELD2": "2167969",
+   "FIELD3": "15",
+   "FIELD4": "Jonathan",
+   "FIELD5": "Lafky",
+   "FIELD6": "assistant",
+   "FIELD7": "social science"
+ },
+ {
+   "FIELD1": "4.8",
+   "FIELD2": "1196288",
+   "FIELD3": "35",
+   "FIELD4": "Jenny",
+   "FIELD5": "Bourne",
+   "FIELD6": "professor",
+   "FIELD7": "social science"
+ },
+ {
+   "FIELD1": "3",
+   "FIELD2": "1461317",
+   "FIELD3": "32",
+   "FIELD4": "Jay",
+   "FIELD5": "Levi",
+   "FIELD6": "professor",
+   "FIELD7": "social science"
+ },
+ {
+   "FIELD1": "5",
+   "FIELD2": "158255",
+   "FIELD3": "27",
+   "FIELD4": "Bill",
+   "FIELD5": "North",
+   "FIELD6": "professor",
+   "FIELD7": "humanities "
+ },
+ {
+   "FIELD1": "2",
+   "FIELD2": "133564",
+   "FIELD3": "26",
+   "FIELD4": "Lawrence",
+   "FIELD5": "Burnett",
+   "FIELD6": "professor",
+   "FIELD7": "arts"
+ },
+ {
+   "FIELD1": "3.4",
+   "FIELD2": "562054",
+   "FIELD3": "26",
+   "FIELD4": "Nathan",
+   "FIELD5": "Grawe",
+   "FIELD6": "professor",
+   "FIELD7": "social science"
+ },
+ {
+   "FIELD1": "4.7",
+   "FIELD2": "779826",
+   "FIELD3": "26",
+   "FIELD4": "Pierre",
+   "FIELD5": "Hecker",
+   "FIELD6": "associate",
+   "FIELD7": "humanities "
+ },
+ {
+   "FIELD1": "2.6",
+   "FIELD2": "310616",
+   "FIELD3": "24",
+   "FIELD4": "Mike",
+   "FIELD5": "Flynn",
+   "FIELD6": "professor",
+   "FIELD7": "social science"
+ },
+ {
+   "FIELD1": "3",
+   "FIELD2": "339170",
+   "FIELD3": "23",
+   "FIELD4": "Richard",
+   "FIELD5": "Keiser",
+   "FIELD6": "professor",
+   "FIELD7": "social science"
+ },
+ {
+   "FIELD1": "4.3",
+   "FIELD2": "1546637",
+   "FIELD3": "23",
+   "FIELD4": "Mihaela",
+   "FIELD5": "Czobor-Lupp",
+   "FIELD6": "associate",
+   "FIELD7": "social science"
+ },
+ {
+   "FIELD1": "3.5",
+   "FIELD2": "1654916",
+   "FIELD3": "22",
+   "FIELD4": "Tun",
+   "FIELD5": "Myint",
+   "FIELD6": "associate",
+   "FIELD7": "social science"
+ },
+ {
+   "FIELD1": "4.4",
+   "FIELD2": "616304",
+   "FIELD3": "21",
+   "FIELD4": "Steven",
+   "FIELD5": "Schier",
+   "FIELD6": "professor",
+   "FIELD7": "social science"
+ },
+ {
+   "FIELD1": "3.43",
+   "FIELD2": "836267",
+   "FIELD3": "21",
+   "FIELD4": "Pavel",
+   "FIELD5": "Kapinos",
+   "FIELD6": "assistant",
+   "FIELD7": "social science"
+ },
+ {
+   "FIELD1": "2.8",
+   "FIELD2": "1987450",
+   "FIELD3": "21",
+   "FIELD4": "Mark",
+   "FIELD5": "Kanazawa",
+   "FIELD6": "professor",
+   "FIELD7": "social science"
+ },
+ {
+   "FIELD1": "4.2",
+   "FIELD2": "1996078",
+   "FIELD3": "21",
+   "FIELD4": "Hicham",
+   "FIELD5": "Nassif",
+   "FIELD6": "assistant",
+   "FIELD7": "social science"
+ },
+ {
+   "FIELD1": "4.71",
+   "FIELD2": "1756424",
+   "FIELD3": "21",
+   "FIELD4": "Rafe",
+   "FIELD5": "Jones",
+   "FIELD6": "associate",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "4.75",
+   "FIELD2": "892531",
+   "FIELD3": "20",
+   "FIELD4": "Al",
+   "FIELD5": "Montero",
+   "FIELD6": "professor",
+   "FIELD7": "social science"
+ },
+ {
+   "FIELD1": "2.2",
+   "FIELD2": "1278354",
+   "FIELD3": "20",
+   "FIELD4": "Seungjoo",
+   "FIELD5": "Yoon",
+   "FIELD6": "associate",
+   "FIELD7": "humanities"
+ },
+ {
+   "FIELD1": "3.8",
+   "FIELD2": "2056553",
+   "FIELD3": "20",
+   "FIELD4": "Stephie",
+   "FIELD5": "Fried",
+   "FIELD6": "assistant",
+   "FIELD7": "social science"
+ },
+ {
+   "FIELD1": "4.6",
+   "FIELD2": "890186",
+   "FIELD3": "20",
+   "FIELD4": "Mark",
+   "FIELD5": "Krusemeyer",
+   "FIELD6": "professor",
+   "FIELD7": "stem"
+ },
+ {
+   "FIELD1": "2.7",
+   "FIELD2": "2159813",
+   "FIELD3": "20",
+   "FIELD4": "Andy",
+   "FIELD5": "Poppick",
+   "FIELD6": "assistant",
+   "FIELD7": "stem"
+ }
+]
