@@ -73,7 +73,7 @@ def get_courses():
     courses_list = []
     for row in _fetch_all_rows_for_query(query):
         url = flask.url_for('get_courses_by_course_id', index = row[0], _external=True)
-        course = {'index': row[0], 'course_id':row[1], 'course_name':row[2], 'start_time':row[3],
+        course = {'index': row[0], 'course_id':row[1].replace("+", " "), 'course_name':row[2].replace("+", " "), 'start_time':row[3],
                   'end_time':row[4], 'faculty':row[5], 'department':row[6], 'prof_rating':row[7], 'url':url.strip('%25')}
         courses_list.append(course)
         print(row[0])
@@ -94,7 +94,7 @@ def get_courses_by_course_name(course_name):
     courses_list = []
     for row in _fetch_all_rows_for_query(query):
         url = "http://localhost:5234/courses/name/" + row[1]
-        course = {'course_id':row[0], 'course_name':row[1], 'start_time':row[2],
+        course = {'course_id':row[0].replace("+", " "), 'course_name':row[1].replace("+", " "), 'start_time':row[2],
                   'end_time':row[3], 'faculty':row[4], 'department':row[5], 'url':url}
         # course_partition = course['course_name'].split(" ")
         # course_name2 = ''
@@ -120,7 +120,7 @@ def get_course_id():
     courses_list = []
     for row in rows:
         url = flask.url_for('get_courses_by_course_id', index = row[0], _external=True)
-        course = {'index':row[0], 'course_name':row[1]}
+        course = {'index':row[0], 'course_name':row[1].replace("+", " ")}
         if course not in courses_list:
             courses_list.append(course)
     return json.dumps(courses_list)
@@ -135,21 +135,21 @@ def get_courses_by_course_id(index):
     and 'url' (string). The value associated with 'url' is a URL
     you can use to retrieve this same course in the future.
     '''
-    print(index)
-    query = '''SELECT index, course_id, course_name, start_time, end_time, faculty, department
+    # print(index)
+    query = '''SELECT index, course_id, course_name, start_time, end_time, faculty, department, prof_rating
                FROM courses WHERE index = {0}'''.format(index)
-    courses_list = [1]
-    print("here")
-    print(query)
+    courses_list = []
+    # print("here")
+    # print(query)
     rows = _fetch_all_rows_for_query(query)
-    print("rows1:")
-    print(rows)
+    # print("rows1:")
+    # print(rows)
     for row in rows:
-        print("ROWS:")
-        print(row[0])
+        # print("ROWS:")
+        # print(row[0])
         url = flask.url_for('get_courses_by_course_id', index = row[0], _external=True)
-        course = {'course_id':row[0], 'course_name':row[1], 'start_time':row[2],
-                  'end_time':row[3], 'faculty':row[4], 'department':row[5],'url':url}
+        course = {'course_index': row[0], 'course_id':row[1].replace("+", " "), 'course_name':row[2].replace("+", " "), 'start_time':row[3],
+                  'end_time':row[4], 'faculty':row[5], 'department':row[6], 'prof_rating':row[7], 'url':url}
         courses_list.append(course)
 
     return json.dumps(courses_list)
@@ -184,7 +184,7 @@ def get_courses_by_department(department):
     rows = _fetch_all_rows_for_query(query)
     for row in rows:
         url = flask.url_for('get_courses_by_course_id', index = row[0], _external=True)
-        course = {'course_index': row[0], 'course_id':row[1], 'course_name':row[2], 'start_time':row[3],
+        course = {'course_index': row[0], 'course_id':row[1].replace("+", " "), 'course_name':row[2].replace("+", " "), 'start_time':row[3],
                   'end_time':row[4], 'faculty':row[5], 'department':row[6], 'prof_rating':row[7], 'url':url}
         courses_list.append(course)
 
