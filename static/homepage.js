@@ -37,6 +37,7 @@ function coursesCallback(responseText) {
     */
 
     var course_list = JSON.parse(responseText);
+
     var tableBody = '';
     tableBody += '<thead><tr>';
     tableBody += '<td> Course </td>';
@@ -49,14 +50,17 @@ function coursesCallback(responseText) {
     for (var k = 0; k < course_list.length; k++) {
         var id = course_list[k].course_id;
         var name = course_list[k].course_name;
+        var name_formatted = String(name.split(" ").join(""))
         var time = course_list[k].start_time;
         var end_time = course_list[k].end_time;
         var faculty = course_list[k].faculty;
         var rating = course_list[k].prof_rating;
+        var ind = course_list[k].index;
+        var index = ind.toString();
         tableBody += '<tr>';
         // tableBody += '<td><a onclick="getNeos(' + obj + ")>" + '<a href='+ 'info/' + objString + '>' + obj + '</a></td>';
         tableBody += '<td>' + id;
-        tableBody += '<td><b onclick = "on()">' + name + '</b>';
+        tableBody += '<td><b onclick = "getCourses(' + index + ')">' + name + '</b>';
         if (time != 'n/a'){
             tableBody += '<td>' + time;
         }
@@ -109,13 +113,17 @@ function onBrowseByButton(){
 }
 
 // Functions to turn overlay on/off, respectively
-function on(){
+function on(ind, responseText){
+    // var url = api_base_url + 'id/' + ind;
+
+    var specific_course_list = JSON.parse(responseText);
     document.getElementById("overlay").style.display = "block";
     var overlay_text = document.getElementById("text");
     var info_table = '';
     info_table += '<thead><tr>';
-    info_table += '<td> Summary </td>';
-    info_table += '<td> Requirements Met </td>';
+    info_table += '<td> Start Time </td>';
+    // info_table += '<td> Requirements Met </td>';
+    info_table += '<td>' + specific_course_list[0].start_time + '</td></tr></tbody>';
     overlay_text.innerHTML = info_table;
 }
 function off(){
@@ -138,20 +146,21 @@ function off(){
 //     xmlHttpRequest.send(null);    
 // }
 
-// function getCourses() {
-//     var url = api_base_url + '/courses';
-//     xmlHttpRequest = new XMLHttpRequest();
-//     xmlHttpRequest.open('get', url);
+function getCourses(ind) {
+    var url = api_base_url + 'courses/id/' + parseInt(ind);
+    xmlHttpRequest = new XMLHttpRequest();
+    xmlHttpRequest.open('get', url);
 
-//     xmlHttpRequest.onreadystatechange = function() {
-//             if (xmlHttpRequest.readyState == 4 && xmlHttpRequest.status == 200) { 
-//                 getCoursesCallback(xmlHttpRequest.responseText);
-//             } 
-//         }; 
+    xmlHttpRequest.onreadystatechange = function() {
+            if (xmlHttpRequest.readyState == 4 && xmlHttpRequest.status == 200) { 
+                on(ind, xmlHttpRequest.responseText);
+            } 
+        }; 
 
-//     xmlHttpRequest.send(null);
+    xmlHttpRequest.send(null);
+}
 
-// function getCoursesCallback (responseText) {
+// function getCourseInfoCallback (responseText) {
 //     /*
 //     @param searchValue: The string entered by the user to be searched
 //     @param responseText: The JSON string from the api
@@ -195,47 +204,34 @@ function off(){
 // }
 
 
-// function SearchButton() {
+// function getCourseInfo(course_name) {
 //     /*
 //     Called when search button is clicked
 //     Resets screan of messages and tables
 //     Makes new request to api
 //     Calls function getCoursesCallback()
 //     */
-//     var search = document.getElementById('search');
-//     var searchedBy = document.getElementById('searchBy'); //default is name
-//     //reset table body
-//     var tableBody = "";
-//     var resultsTableElement = document.getElementById('results_table');
-//     resultsTableElement.innerHTML = tableBody;
-//     browsed.innerHTML = "";
-//     var url = api_base_url + 'courses/';
 
-//     if(search.value!='') {
-//         url = url + searchBy.value +'/' + search.value;
-//         input.innerHTML = 'You searched for ' + search.value + '. Please wait while the data loads.';
-//     } else { //default is browse all
-//         url = api_base_url + 'courses/';
-//         input.innerHTML = 'You searched for all courses. Please wait while the data loads.';
-//     }
+//     var url = api_base_url + 'name/' + course_name;
+
 //     xmlHttpRequest = new XMLHttpRequest();
 //     xmlHttpRequest.open('get', url);
 //     xmlHttpRequest.onreadystatechange = function() {
 //             if (xmlHttpRequest.readyState == 4 && xmlHttpRequest.status == 200) { 
-//                 getNeoCallback(search.value, xmlHttpRequest.responseText);
+//                 on(course_name, xmlHttpRequest.responseText);
 //             } 
 //         }; 
 //     xmlHttpRequest.send(null);
 // }
 
 
-function replaceAll(str, find, replace) {
-	/*
-	@param str: string to be modified
-	@param find: string to replace
-	@param replace: string to replace find with
-	@return A string 
-    Replaces all instances of find with replace in the string
-    */
-  return str.replace(new RegExp(find, 'g'), replace);
-}
+// function replaceAll(str, find, replace) {
+	
+// 	@param str: string to be modified
+// 	@param find: string to replace
+// 	@param replace: string to replace find with
+// 	@return A string 
+//     Replaces all instances of find with replace in the string
+    
+//   return str.replace(new RegExp(find, 'g'), replace);
+// }

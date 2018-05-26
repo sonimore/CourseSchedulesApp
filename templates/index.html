@@ -4,6 +4,7 @@
     <title> Carleton Course Schedules </title>
     <script type = "text/javascript" src = "{{ url_for('static', filename= 'courses_config.js')}}" ></script>
     <script type="text/javascript" src="{{ url_for('static', filename='homepage.js')}}"></script> 
+    <!-- <script src="jquery-3.3.1.min.js"></script> -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <link rel="stylesheet" type="text/css" href="../static/homepage.css" /> -->
 </head>
@@ -12,7 +13,7 @@
     
     <div id="header"> Carleton College Classes </div>
     <p><button id = "browsed" onclick="onBrowseButton()"> Browse All Courses </button></p>
-      <style>
+    <style>
     #overlay {
     position: fixed;
     display: none;
@@ -26,7 +27,7 @@
     z-index: 2;
     cursor: pointer;
     }
-    #text{
+    #text { 
     position: absolute;
     top: 50%;
     left: 50%;
@@ -34,7 +35,7 @@
     color: white;
     transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
-}
+    }
     </style>
     <div id = "overlay" onclick = "off()">
         <div id="text">Overlay Text</div>
