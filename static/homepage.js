@@ -120,10 +120,23 @@ function on(ind, responseText){
     document.getElementById("overlay").style.display = "block";
     var overlay_text = document.getElementById("text");
     var info_table = '';
-    info_table += '<thead><tr>';
-    info_table += '<td> Start Time </td>';
+    info_table += '<table width = "700"><tr valign = "top">';
+    info_table += '<td> Start Time: </td>';
+    info_table += '<td>' + specific_course_list[0].start_time + '</td></tr>';
+
+    info_table += '<tr valign = "top"><td> Description: </td>';
+    info_table += '<td>' + specific_course_list[0].description + '</td></tr>';
+
+    info_table += '<tr valign = "top"><td> Requirements Met: </td>';
+    info_table += '<td>' + specific_course_list[0].requirements_met0.concat(specific_course_list[0].requirements_met1).concat(specific_course_list[0].requirements_met2) + '</td></tr>';
+ 
+
     // info_table += '<td> Requirements Met </td>';
-    info_table += '<td>' + specific_course_list[0].start_time + '</td></tr></tbody>';
+    // info_table += '<tr>'
+    // info_table += '<td>' + specific_course_list[0].requirements_met0 + '</td>';
+    // info_table += '<td>' + specific_course_list[0].requirements_met1 + '</td>';    
+    // info_table += '<td>' + specific_course_list[0].requirements_met2 + '</td></tr></table>';
+
     overlay_text.innerHTML = info_table;
 }
 function off(){

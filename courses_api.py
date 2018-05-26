@@ -136,7 +136,8 @@ def get_courses_by_course_id(index):
     you can use to retrieve this same course in the future.
     '''
     # print(index)
-    query = '''SELECT index, course_id, course_name, start_time, end_time, faculty, department, prof_rating
+    query = '''SELECT index, course_id, course_name, start_time, end_time, faculty, department, prof_rating,
+    description, credits, requirements_met0, requirements_met1, requirements_met2
                FROM courses WHERE index = {0}'''.format(index)
     courses_list = []
     # print("here")
@@ -149,7 +150,7 @@ def get_courses_by_course_id(index):
         # print(row[0])
         url = flask.url_for('get_courses_by_course_id', index = row[0], _external=True)
         course = {'course_index': row[0], 'course_id':row[1].replace("+", " "), 'course_name':row[2].replace("+", " "), 'start_time':row[3],
-                  'end_time':row[4], 'faculty':row[5], 'department':row[6], 'prof_rating':row[7], 'url':url}
+                  'end_time':row[4], 'faculty':row[5], 'department':row[6], 'prof_rating':row[7], 'description':row[8],  'credits':row[9], 'requirements_met0': row[10], 'requirements_met1': row[11], 'requirements_met2': row[12],'url':url}
         courses_list.append(course)
 
     return json.dumps(courses_list)
