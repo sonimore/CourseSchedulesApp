@@ -119,17 +119,34 @@ function on(ind, responseText){
     var specific_course_list = JSON.parse(responseText);
     document.getElementById("overlay").style.display = "block";
     var overlay_text = document.getElementById("text");
+    var requirements_arr = [specific_course_list[0].requirements_met0, specific_course_list[0].requirements_met1, specific_course_list[0].requirements_met2];
+    var requirements = ""
+    // var requirements = specific_course_list[0].requirements_met0 + ", " + specific_course_list[0].requirements_met1 + ", " + specific_course_list[0].requirements_met2;
+    // if (requirements.includes("null")){
+    //     requirements.replace("null", "");
+    // }
+
+    for (var i = 0; i < requirements_arr.length; i++){
+        if(requirements_arr[i] != null){
+            requirements = requirements + requirements_arr[i];
+            if (requirements_arr[i+1] != null){
+                requirements += ", ";
+            }
+        }
+    }
+    
     var info_table = '';
-    info_table += '<table width = "700"><tr valign = "top">';
+    info_table += '<table width = "750"><tr valign = "top">';
     info_table += '<td> Start Time: </td>';
     info_table += '<td>' + specific_course_list[0].start_time + '</td></tr>';
+    info_table += '<td> End Time: </td>';
+    info_table += '<td>' + specific_course_list[0].end_time + '</td></tr>';
 
     info_table += '<tr valign = "top"><td> Description: </td>';
     info_table += '<td>' + specific_course_list[0].description + '</td></tr>';
 
     info_table += '<tr valign = "top"><td> Requirements Met: </td>';
-    info_table += '<td>' + specific_course_list[0].requirements_met0.concat(specific_course_list[0].requirements_met1).concat(specific_course_list[0].requirements_met2) + '</td></tr>';
- 
+    info_table += '<td>' + requirements;
 
     // info_table += '<td> Requirements Met </td>';
     // info_table += '<tr>'
