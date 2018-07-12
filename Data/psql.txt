@@ -1,0 +1,20 @@
+CREATE TABLE courses (
+	index INT,
+	term TEXT,
+	prof_rating FLOAT8,
+	requirements_met0 TEXT,
+	requirements_met1 TEXT,
+	requirements_met2 TEXT,
+	requirements_met3 TEXT,
+	course_name TEXT,
+	registered INT,
+	description TEXT,
+	course_id TEXT,
+	end_time TEXT,
+	faculty TEXT,
+	department TEXT,
+	credits TEXT, 
+	start_time TEXT,
+	size INT,
+	PRIMARY KEY(course_id)
+);
