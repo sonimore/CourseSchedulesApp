@@ -114,17 +114,11 @@ function onBrowseByButton(){
 
 // Functions to turn overlay on/off, respectively
 function on(ind, responseText){
-    // var url = api_base_url + 'id/' + ind;
-
     var specific_course_list = JSON.parse(responseText);
     document.getElementById("overlay").style.display = "block";
     var overlay_text = document.getElementById("text");
     var requirements_arr = [specific_course_list[0].requirements_met0, specific_course_list[0].requirements_met1, specific_course_list[0].requirements_met2];
     var requirements = ""
-    // var requirements = specific_course_list[0].requirements_met0 + ", " + specific_course_list[0].requirements_met1 + ", " + specific_course_list[0].requirements_met2;
-    // if (requirements.includes("null")){
-    //     requirements.replace("null", "");
-    // }
 
     for (var i = 0; i < requirements_arr.length; i++){
         if(requirements_arr[i] != null){
@@ -148,33 +142,11 @@ function on(ind, responseText){
     info_table += '<tr valign = "top"><td> Requirements Met: </td>';
     info_table += '<td>' + requirements;
 
-    // info_table += '<td> Requirements Met </td>';
-    // info_table += '<tr>'
-    // info_table += '<td>' + specific_course_list[0].requirements_met0 + '</td>';
-    // info_table += '<td>' + specific_course_list[0].requirements_met1 + '</td>';    
-    // info_table += '<td>' + specific_course_list[0].requirements_met2 + '</td></tr></table>';
-
     overlay_text.innerHTML = info_table;
 }
 function off(){
     document.getElementById("overlay").style.display = 'none';
 }
-
-
-
-// function getDepartments(){
-//     var url = api_base_url + '/courses/departments';
-//     xmlHttpRequest = new XMLHttpRequest();
-//     xmlHttpRequest.open('get', url);
-
-//     xmlHttpRequest.onreadystatechange = function() {
-//             if (xmlHttpRequest.readyState == 4 && xmlHttpRequest.status == 200) { 
-//                 getCoursesCallback(xmlHttpRequest.responseText);
-//             } 
-//         }; 
-
-//     xmlHttpRequest.send(null);    
-// }
 
 function getCourses(ind) {
     var url = api_base_url + 'courses/id/' + parseInt(ind);
@@ -252,16 +224,4 @@ function getCourses(ind) {
 //             } 
 //         }; 
 //     xmlHttpRequest.send(null);
-// }
-
-
-// function replaceAll(str, find, replace) {
-	
-// 	@param str: string to be modified
-// 	@param find: string to replace
-// 	@param replace: string to replace find with
-// 	@return A string 
-//     Replaces all instances of find with replace in the string
-    
-//   return str.replace(new RegExp(find, 'g'), replace);
 // }
